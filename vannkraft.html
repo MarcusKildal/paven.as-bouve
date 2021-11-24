@@ -7,7 +7,22 @@
     <title>bilal</title>
 </head>
 <body>
-    <h1>dsflsflse</h1>
-    
+    Strømpris: <span id="eksempelPlassForStrompris"></span>
+    vanninnstrømning: <span id="vanninnstrømning"></span>
+
+<script>
+    const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
+    const vanninnstrømning = document.getElementById("vanninnstrømning");
+    fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
+        eksempelPlassForStromprisElement.innerText = value;
+    });
+    fetch("https://innafjord.azurewebsites.net/api/WaterInflux").then(response => response.json()).then(value => {
+        vanninnstrømning.innerText = value;
+    });
+</script>
+ 
+<style>
+</style>
+ 
 </body>
 </html>
