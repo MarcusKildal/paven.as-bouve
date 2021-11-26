@@ -1,0 +1,519 @@
+
+/* Font styling Start */
+
+
+/* legger til font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+/* Font styling End */
+
+
+
+/* all elements styling Start */
+
+
+/* gir alle elementer posisjon og størrelse. også fjerner text stil til alle elementer  */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+
+
+/* all elements styling End */
+
+
+
+
+/* custom scroll bar Start */
+
+
+
+/* gir scrollbar bredde og oransje bakgunnsfarge.
+   Også hvis man har pilen over scrollbar bytter bakgunnsfarge til blå */
+
+  ::-webkit-scrollbar {
+      width: 10px;
+
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: orange;
+
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+      background: firebrick;
+  }
+
+/* custom scroll bar End */
+
+
+
+
+
+/* menu-bar styling Start */
+
+
+
+/* gir posisjon for menu bar. */
+
+.max-width {
+  padding: 0 80px;
+  margin: auto;
+}
+
+
+/* gir menu bar posisjon, bredde, verdi og font.
+  også hvor mye tid skal den ta, til menu bar får bakgunnsfarge blå. */
+
+.menu-bar {
+  background: orangered;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  padding: 20px 0;
+  font-family: "Ubuntu", sans-serif;
+  transition: 0.3s;
+}
+
+
+
+/* når man blar ned, får menu bar bakgunnsfarge blå. */
+
+.menu-bar.sticky {
+  padding: 15px 0;
+  background: firebrick;
+}
+
+
+/* gir posisjon for menu bar og mellerom */
+
+.menu-bar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* gir hvit farge til kallenavn min og hvor mye tykt skal den være */
+
+.menu-bar .nickname a {
+  color: white;
+  font-size: 35px;
+  font-weight: 600;
+  }
+
+
+/* gir blå farge til forkortelse av kallenavn min. */
+
+.menu-bar .nickname a span{
+  color: firebrick;
+
+}
+
+/* når man blar ned, bytter forkortelse av kallenavn min, farge til hvit. */
+
+.menu-bar.sticky .nickname a span {
+  color: white;
+}
+
+
+/* gir retning for menu bar tittelene */
+
+.menu-bar .menu li {
+  display: inline-block;
+}
+
+
+/* gir fontstørrelse og hvit farge til menu bar tittel.
+   Også hvor mye tykt skal den være og hvor mye tid skal den ta, til den bytter farge. */
+
+.menu-bar .menu li a {
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: 14px;
+  transition: color 0.3s;
+}
+
+
+/* menu bar tittel får blå farge, når man tar pilen over den. */
+
+.menu-bar .menu li a:hover {
+  color: firebrick;
+
+}
+
+
+/* når menu bar har bakgunnsfarge blå. får menu bar tittel farge hvit, når man tar pilen over den. */
+
+.menu-bar.sticky .menu li a:hover {
+  color: white;
+}
+
+/* menu-bar styling End */
+
+
+
+
+/* menu-icon styling Start */
+
+
+
+/* gir menu icon og kryss icon hvit farge og fontstørrelse.
+   Også sier jeg at, de skal ikke vises på skjermen og
+   de skal få peke tegn, når man har pil over den. */
+
+.menu-icon {
+  color: white;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+
+/* menu-icon styling End */
+
+
+
+
+/* all similar content styling code Start */
+
+
+
+/* gir alle skesjoner posisjon. */
+
+
+section {
+  padding: 100px 0;
+}
+
+
+/* gir alle disse font. */
+
+.about, .hobby, .skills, .teams {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* gir alle disse posisjon, mellerom og bytter retning når skjermen blir mindre. */
+
+.about .at {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+/* alle seksjoner tittel får font, posisjon, fontstørrelse og hvor mye tykt skal de være. */
+
+section .title {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* legger til innhold bokser som er My skills og About me
+   og gir de posisjon, bredde, høyde og bakgrunn svart */
+
+section .title::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 180px;
+  height: 3px;
+  background: black;
+  transform: translate(-50%);
+}
+
+
+/* gir posisjon, fontstørrelse og bakgrunn hvit, til innhold tekst som er i My skills og About me. */
+
+section .title::after {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  font-size: 20px;
+  color: firebrick;
+  padding: 5px;
+  background: white;
+  transform: translate(-50%);
+}
+
+/* all similar content styling code End */
+
+
+
+
+/* Homepage styling Start */
+
+
+/* legger til bakgrunn for homepage min. etter det gir jeg font, hvit farge, posisjon
+   og bakgrunnshøyde til homepage min. Også sier jeg at, bakgrunne skal dekke hele homepage. */
+
+.homepage {
+  display: flex;
+  background: url("vannkraft.jpeg");
+  height: 100vh;
+  color: firebrick;
+  background-size: cover;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* gir posisjon til homepage min. */
+
+ .homepage .max-width {
+   margin: auto 0 auto 40px;
+ }
+
+
+ /* gir fontstørrelse  til homepage tekst nummer 1. */
+
+ .homepage .text-1 {
+   font-size: 27px;
+ }
+
+
+ /* gir fontstørrelse og posisjon til homepage tekst nummer 2. også hvor mye tykt skal den være. */
+
+ .homepage .text-2 {
+     font-size: 75px;
+     font-weight: 600;
+     margin-left: -3px;
+ }
+
+ /* gir fontstørrelse og posisjon til homepage tekst nummer 3. */
+
+ .homepage .text-3 {
+     font-size: 40px;
+     margin: 5px 0;
+ }
+
+
+ /* gir turkish farge til teksten som blir skrevet i homepage. Også hvor mye tykt skal den være */
+
+ .homepage .text-3 span {
+    color: red;
+    font-weight: 500;
+ }
+
+
+
+/* Homepage styling End */
+
+
+
+
+
+
+
+
+/* id styling Start */
+
+
+
+/* gir brukernavn boksen min posisjon, et farge, størrelse 
+   og hvordan formen skal være til brukernavn boksen min. */ 
+
+	#text {
+
+		height: 25px;
+		border-radius: 5px;
+		padding: 4px;
+    margin-top: 10px;
+    margin-left: 15px;
+		border: solid thin #aaa;
+		width: 90%;
+	}
+
+
+/* gir passord boksen min posisjon, et farge, størrelse 
+   og hvordan formen skal være til passord boksen min. */ 
+
+  #psd {
+
+		height: 25px;
+		border-radius: 5px;
+		padding: 5px;
+    margin-top: 15px;
+    margin-left: 15px;
+		border: solid thin #aaa;
+		width: 90%;
+	}
+
+
+/* gir knappene mine posisjon, farger og størrelse  */
+
+	#button {
+            padding: 10px;
+            width: 100px;
+            margin-top: 30px;
+            margin-left: 20px;
+            color: white;
+            background-color: rgb(235, 26, 26);
+            border: none;
+            cursor: pointer;
+	        }
+
+
+/* gir selve boksen min  posisjon, farger, størrelse 
+   og hvordan formen skal være til boksen  */  
+
+	#box {
+        width: 700px;
+        height: 480px;
+        margin-right: 15%;
+        margin-top: 5%;
+        border: 2px solid grey;
+        box-shadow: 0 5px 38px red;
+        background: linear-gradient(rgba(14, 54, 214, 0.9), 100%,transparent);
+        border-radius: 20px;
+     	}
+
+
+
+/* gir (har du ikke konto?) teksten posisjon. */  
+
+#txt {
+  margin-top: 10%;
+  margin-left: 5%;
+  color: white;
+
+}
+
+
+/* gir (Brukernavn er obligatorisk, Passord er obligatorisk) 
+   beskjeden posisjon. */  
+
+#msg {
+  position: relative;
+  margin-top: 2%;
+  margin-left: 3%;
+  width: 200px; 
+  color: white;
+}
+
+
+/* id styling End */
+
+
+
+
+/* gir et størrelse og posisjon til bruker-icon. */  
+
+img { 
+  position: relative;
+  margin-top: 3%;
+  margin-left: 38%;
+  width: 100px;
+  }
+
+
+
+
+  
+/* responsive media query Start */
+
+
+@media (max-width: 1000px) {
+
+  /* når bredde er 1000 til skjermen, så skal max-width klasser bytte posisjon */
+
+  .max-width {
+      padding: 0 50px;
+     }
+     
+}
+
+
+@media (max-width: 978px) {
+
+/* gir maks bredde til klasse max-width. */
+
+  .max-width {
+    max-width: 800px;
+  }
+  
+
+}
+
+
+ @media (max-width: 690px) {
+
+
+/* når bredde er 690 til skjermen, så skal max-width klasser bytte posisjon */
+
+   .max-width {
+       padding: 0 22px;
+   }
+
+
+/*  gir fonstørrelse til tekst nummer 2, som er i homepage.
+    Det gjelder bare når bredde til skjermen er 690. */
+
+   .homepage .text-2 {
+       font-size: 60px;
+
+   }
+
+
+/*  gir fonstørrelse til tekst nummer 3, som er i homepage.
+    Det gjelder bare når bredde til skjermen er 690. */
+
+   .homepage .text-3{
+       font-size: 32px;
+
+   }
+
+
+/*  gir fonstørrelse til play tekst, som er i homepage.
+    Det gjelder bare når bredde til skjermen er 690. */
+
+   .homepage a {
+     font-size: 20px;
+
+   }
+
+ }
+
+
+
+ @media (max-width: 528px) {}
+
+
+
+
+
+ @media (max-width: 500px) {
+
+
+/*  gir fonstørrelse til tekst nummer 2, som er i homepage.
+    Det gjelder bare når bredde til skjermen er 500. */
+
+   .homepage .text-2 {
+       font-size: 50px;
+
+   }
+
+
+/*  gir fonstørrelse til tekst nummer 3, som er i homepage.
+    Det gjelder bare når bredde til skjermen er 500. */
+
+   .homepage .text-3 {
+       font-size: 27px;
+      }
+
+ }
+
+ /* responsive media query End */
