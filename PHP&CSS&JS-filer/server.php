@@ -127,7 +127,7 @@ if(isset($_POST["logginn"])) {
     $_SESSION["brukernavn"] = $row_bruker->brukernavn;
     $_SESSION["passord"] = $row_bruker->passord;
 
-    header("location: index.php");
+    header("location: main.php");
   } else {
     echo "Brukeren er ikke registrert (enten er brukernavn eller passord feil)!";
     }

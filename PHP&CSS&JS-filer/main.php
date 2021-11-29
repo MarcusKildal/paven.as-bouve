@@ -5,10 +5,10 @@ include("server.php");
 // det gjør sånn at du blir logget ut
 if(isset($_GET["loggut"])) {
   session_destroy();
-  header("location: login-register.php");
+  header("location: index.php");
 }
 if(empty($_SESSION["id"])) {
-  header("location: login-register.php");
+  header("location: index.php");
 }
 
 
@@ -59,7 +59,7 @@ if(empty($_SESSION["id"])) {
    <nav class="menu-bar">
 
       <div class="max-width">
-      <div class="nickname"> <a href="index.php" >PAVEN<span>.CEO</span></a></div>
+      <div class="nickname"> <a href="main.php" >PAVEN<span>.CEO</span></a></div>
 
 
 
@@ -253,7 +253,7 @@ if(empty($_SESSION["id"])) {
 <!-- legger til bunntekst -->
 
    <footer>
-     <h3>Created By <a href="index.php">Paven.CEO</a></h3>
+     <h3>Created By <a href="main.php">Paven.CEO</a></h3>
    </footer>
 
 <!-- footer section End -->
