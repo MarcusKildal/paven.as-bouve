@@ -5,10 +5,10 @@ include("server.php");
 // det gjør sånn at du blir logget ut
 if(isset($_GET["loggut"])) {
   session_destroy();
-  header("location: logginn.php");
+  header("location: login-register.php");
 }
 if(empty($_SESSION["id"])) {
-  header("location: logginn.php");
+  header("location: login-register.php");
 }
 
 
@@ -23,7 +23,7 @@ if(empty($_SESSION["id"])) {
 
   <!-- linker til css filen -->
 
-    <link rel="stylesheet" href="style-1.css">
+    <link rel="stylesheet" href="style-10.css">
 
   <!-- gir tittel for nettsiden min -->
 
@@ -61,9 +61,6 @@ if(empty($_SESSION["id"])) {
       <div class="max-width">
       <div class="nickname"> <a href="index.php" >PAVEN<span>.CEO</span></a></div>
 
-        <div class="menu-icon">
-          <i class="fas fa-bars"></i>
-        </div>
 
 
 <!-- lager klasse for menu-bar (Din profil) 
@@ -71,12 +68,12 @@ if(empty($_SESSION["id"])) {
         Etter det lager jeg drop-menu for dette og lager logg ut knapp. -->
 
   <div class="right-menu">
-    <button class="menu-button">Din Profil</button>
+    <button class="menu-button">Your Profile</button>
     
     <div class="dropdown-menu">
-      <p><b>Fornavn:</b> <?php echo $_SESSION["fornavn"]?></p> <br>
-      <p><b>Etternavn:</b> <?php echo $_SESSION["etternavn"]?></p> <br>
-      <p><b>E-post:</b> <?php echo $_SESSION["epost"]?></p><br>
+      <p><b>Firstname:</b> <?php echo $_SESSION["fornavn"]?></p> <br>
+      <p><b>Surname:</b> <?php echo $_SESSION["etternavn"]?></p> <br>
+      <p><b>Email:</b> <?php echo $_SESSION["epost"]?></p><br>
       <a href="?loggut" id= "button">Logg ut</a>
     </div>
 
@@ -110,21 +107,18 @@ if(empty($_SESSION["id"])) {
         <div class="text-3"><span class="typing"></span></div>
 
     <div class="play">
-      <a href="#" class="play" onclick="toggle();"><img src="../Matriale/Bilder/play.png" alt="Play">Watch Video</a>
+      <a href="#" class="play" onclick="toggle();"><img src="/bilder-video/play.png" alt="Play">Watch Video</a>
     </div>
 
     <div class="video">
-      <img src="close.png" class="close" onclick="toggle();">
-      <video src="Amazing-Hydropower-Video.mp4" controls></video>
+      <img src="/bilder-video/close.png" class="close" onclick="toggle();">
+      <video src="bilder-video/video/Amazing-Hydropower-Video.mp4" controls></video>
     </div>
 
   </div>
 
 
-<!-- legger til bakgrunnsmusikk -->
-<div class="audio">
-  <audio src="waterfall.mp4" autoplay>
-</div>
+
 </section>
 
 <!-- Homepage section End -->
@@ -154,7 +148,7 @@ if(empty($_SESSION["id"])) {
      <div class="left">
 
       <div class="about-image">
-        <img src="vannkraft-2.jpeg" alt="Bilde av meg">
+        <img src="bilder-video/vann/vannkraft-2.jpeg" alt="Bilde av meg">
       </div>
 
      </div>
@@ -194,16 +188,16 @@ if(empty($_SESSION["id"])) {
 
   <div class="max-width">
 
-      <h2 class="title">Our teams</h2>
+     <h2 class="title">Our teams</h2>
 
      <div class="ts owl-carousel">
 
         <div class="foto">
 
             <div class="box">
-               <img src="../Matriale/Bilder/BlueAvengerZ.jpg" alt="">
+               <img src="bilder-video/personer/BlueAvengerZ.jpg" alt="">
                <div class="text">Bilal Hussain</div>
-               <p>Hi, my name is Bilal and I like to use my time perfect</p>
+               <p>Hi, my name is Bilal and I like to use my time perfect.</p>
             </div>
 
        </div>
@@ -212,9 +206,9 @@ if(empty($_SESSION["id"])) {
         <div class="foto">
 
              <div class="box">
-                 <img src="Marcus.jpeg" alt="">
+                 <img src="bilder-video/personer/Marcus.jpeg" alt="Marcus">
                  <div class="text">Marcus Kildal-Santome</div>
-                 <p>Hi, my name is Marcus and I like to watch youtube videos</p>
+                 <p>Hi, my name is Marcus and I like play games and watch anime.</p>
              </div>
 
         </div>
@@ -223,9 +217,9 @@ if(empty($_SESSION["id"])) {
         <div class="foto">
 
              <div class="box">
-                <img src="" alt="">
+                <img src="bilder-video/personer/Alexander.png" alt="Alexander">
                 <div class="text">Alexander Carl Brunskow</div>
-                <p>Hi, my name is Alexander, I like play games and watch anime .</p>
+                <p>Hi, my name is Alexander and I like to watch youtube videos.</p>
              </div>
 
        </div>
@@ -234,14 +228,13 @@ if(empty($_SESSION["id"])) {
        <div class="foto">
 
         <div class="box">
-           <img src="" alt="">
+           <img src="bilder-video/personer/Ludvig.png" alt="Ludvig">
            <div class="text">"Karl Ludvig Theodor Ringdal</div>
            <p>Hi, my name is "Ludvig, I like play games and watch football .</p>
         </div>
 
-  </div>
-
-     </div>
+    </div>
+   </div>
 
   </div>
 
@@ -271,7 +264,7 @@ if(empty($_SESSION["id"])) {
 
 <!-- linker til javascript -->
 
-  <script src="script.js"></script>
+  <script src="scripts-2.js"></script>
 
  </body>
 

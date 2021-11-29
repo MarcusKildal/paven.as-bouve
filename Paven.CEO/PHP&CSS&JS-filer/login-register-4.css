@@ -1,0 +1,628 @@
+
+/* Font styling Start */
+
+
+/* legger til font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+/* Font styling End */
+
+
+
+/* all elements styling Start */
+
+
+/* gir alle elementer posisjon og størrelse. også fjerner text stil til alle elementer  */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+
+
+/* all elements styling End */
+
+
+
+
+/* custom scroll bar Start */
+
+
+
+/* gir scrollbar bredde og oransje bakgunnsfarge.
+   Også hvis man har pilen over scrollbar bytter bakgunnsfarge til blå */
+
+  ::-webkit-scrollbar {
+      width: 10px;
+
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: orange;
+
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+      background: firebrick;
+  }
+
+/* custom scroll bar End */
+
+
+
+
+
+/* menu-bar styling Start */
+
+
+
+/* gir posisjon for menu bar. */
+
+.max-width {
+  padding: 0 80px;
+  margin: auto;
+}
+
+
+/* gir menu bar posisjon, bredde, verdi og font.
+  også hvor mye tid skal den ta, til menu bar får bakgunnsfarge blå. */
+
+.menu-bar {
+  background: orangered;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 12px 0;
+  font-family: "Ubuntu", sans-serif;
+  transition: 0.3s;
+}
+
+
+
+/* når man blar ned, får menu bar bakgunnsfarge blå. */
+
+.menu-bar.sticky {
+  padding: 15px 0;
+  background: firebrick;
+}
+
+
+/* gir posisjon for menu bar og mellerom */
+
+.menu-bar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* gir hvit farge til kallenavn min og hvor mye tykt skal den være */
+
+.menu-bar .nickname a {
+  color: white;
+  font-size: 35px;
+  font-weight: 600;
+  }
+
+
+/* gir blå farge til forkortelse av kallenavn min. */
+
+.menu-bar .nickname a span{
+  color: firebrick;
+
+}
+
+/* når man blar ned, bytter forkortelse av kallenavn min, farge til hvit. */
+
+.menu-bar.sticky .nickname a span {
+  color: white;
+}
+
+
+/* gir retning for menu bar tittelene */
+
+.menu-bar .menu li {
+  display: inline-block;
+}
+
+
+/* gir fontstørrelse og hvit farge til menu bar tittel.
+   Også hvor mye tykt skal den være og hvor mye tid skal den ta, til den bytter farge. */
+
+.menu-bar .menu li a {
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: 14px;
+  transition: color 0.3s;
+}
+
+
+/* menu bar tittel får blå farge, når man tar pilen over den. */
+
+.menu-bar .menu li a:hover {
+  color: firebrick;
+
+}
+
+
+/* når menu bar har bakgunnsfarge blå. får menu bar tittel farge hvit, når man tar pilen over den. */
+
+.menu-bar.sticky .menu li a:hover {
+  color: white;
+}
+
+/* menu-bar styling End */
+
+
+body,input {
+  font-family: "Poppins", sans-serif;
+}
+
+.box {
+  position: relative;
+  background: url(bilder-video/vann/vannkraft-4.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.box-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.signin-signup {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 75%;
+  width: 50%;
+  transition: 1s 0.7s ease-in-out;
+  display: grid;
+  z-index: 5;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 5px;
+  transition: all 0.2s 0.7s;
+  overflow: hidden;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+form.sign-up-form {
+  opacity: 0;
+  z-index: 1;
+}
+
+form.sign-in-form {
+  z-index: 2;
+}
+
+.title {
+  position: relative;
+  background: rgba(178, 34, 34, 0.829);
+  border-radius: 20px;
+  width: 190px;
+  height: 65px;
+  top: 40px;
+  right: 5px;
+}
+
+.tle {
+  position: relative;
+  color: white;
+  right: 5px;
+  bottom: 16px;
+  font-size: 30px;
+}
+
+
+.tekst-felt {
+  max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  height: 55px;
+  border-radius: 55px;
+  display: grid;
+  padding: 0 20px;
+  position: relative;
+}
+
+
+.tekst-felt input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 20px;
+  color: #333;
+}
+
+
+.button {
+  position: relative;
+  width: 150px;
+  margin: 10px 0;
+  height: 49px;
+  color: #fff;
+  background-color: orangered;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 49px;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  
+}
+
+
+.button-2 {
+  position: relative;
+  width: 150px;
+  margin: 10px 0;
+  height: 49px;
+  right: 20px;
+  color: #fff;
+  background-color: orangered;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 49px;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+
+
+.button:hover {
+  background-color: firebrick;
+}
+
+
+.paneler-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+.box:before {
+  content: "";
+  position: absolute;
+  height: 2000px;
+  width: 2000px;
+  top: -10%;
+  right: 48%;
+  transform: translateY(-50%);
+  background-image: linear-gradient(-45deg, rgb(143, 40, 2) 0%, orangered 100%);
+  transition: 1.8s ease-in-out;
+  border-radius: 50%;
+  z-index: 6;
+}
+
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  text-align: center;
+  z-index: 6;
+}
+
+.left-panel {
+  pointer-events: all;
+  padding: 3px 17% 2px 12%;
+}
+
+.right-panel {
+  pointer-events: none;
+  padding: 3px 12% 2px 17%;
+}
+
+.panel .content {
+  color: #fff;
+  transition: transform 0.9s ease-in-out;
+  transition-delay: 0.6s;
+}
+
+.panel h3 {
+  font-weight: 600;
+  line-height: 1;
+  font-size: 15px;
+}
+
+.panel p {
+  font-size: 10px;
+  padding: 7px 0;
+}
+
+.button.gjennomsiktig {
+  margin: 0;
+  background: none;
+  border: 2px solid #fff;
+  width: 130px;
+  height: 41px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.right-panel,
+.right-panel .content {
+  transform: translateX(800px);
+}
+
+
+/* gir et størrelse og posisjon til bruker-icon. */  
+
+#msg {
+  position: relative;
+  bottom: 180%;
+  margin-left: 26%;
+  color: white;
+  font-size: 20px;
+  max-width: 280px;
+}
+
+.msg-2 {
+ position: relative;
+ left: 170px;
+ bottom: 180px;
+ width: 360px;
+ height: 90px;
+ background-color:rgba(138, 15, 15, 0.226);
+ z-index: -1;
+ 
+}
+
+ 
+
+.content p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+/* Lager animasjoner for forskjellige div-boksene */
+
+.box.sign-up-mode:before {
+  transform: translate(100%, -50%);
+  right: 52%;
+}
+
+.box.sign-up-mode .left-panel,
+.box.sign-up-mode .left-panel .content {
+  transform: translateX(-800px);
+}
+
+.box.sign-up-mode .signin-signup {
+  left: 25%;
+}
+
+.box.sign-up-mode form.sign-up-form {
+  opacity: 1;
+  z-index: 2;
+}
+
+.box.sign-up-mode form.sign-in-form {
+  opacity: 0;
+  z-index: 1;
+}
+
+.box.sign-up-mode .right-panel,
+.box.sign-up-mode .right-panel .content {
+  transform: translateX(0%);
+}
+
+.box.sign-up-mode .left-panel {
+  pointer-events: none;
+}
+
+.box.sign-up-mode .right-panel {
+  pointer-events: all;
+}
+
+
+
+
+
+
+
+
+/* footer section styling Start */
+
+
+/* gir bakgrunn blå og posisjon til under tekst. */
+
+footer {
+  background: firebrick;
+  padding: 14px 23px;
+  text-align: center;
+}
+
+
+/* gir fontstørrelse og hvit farge til under tekst 1. også hvor mye tykt skal den være og
+ fjerner text stil. */
+
+footer h3 {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+
+/* gir fontstørrelse og hvit farge til under tekst 2. også fjerner jeg text stil til den. */
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+
+/* gir text stil til under tekst 2 og når man tar pilen over den, så får den linje under. */
+
+footer a:hover {
+text-decoration: underline;
+}
+
+/* footer section styling End */
+
+
+
+
+
+
+
+
+@media (max-width: 870px) {
+
+  .box {
+    min-height: 800px;
+    height: 100vh;
+  }
+  .signin-signup {
+    width: 100%;
+    top: 95%;
+    transform: translate(-50%, -100%);
+    transition: 1s 0.8s ease-in-out;
+  }
+
+  .signin-signup,
+  .box.sign-up-mode .signin-signup {
+    left: 50%;
+  }
+
+  .paneler-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+
+  .panel {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px 8%;
+    grid-column: 1 / 2;
+  }
+
+  .right-panel {
+    grid-row: 3 / 4;
+  }
+
+  .left-panel {
+    grid-row: 1 / 2;
+  }
+
+ 
+
+  .panel .content {
+    padding-right: 15%;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.8s;
+  }
+
+  .panel h3 {
+    font-size: 12px;
+  }
+
+  .panel p {
+    font-size: 10px;
+    padding: 5px 0;
+  }
+
+  .button.gjennomsiktig {
+    width: 110px;
+    height: 35px;
+    font-size: 10px;
+  }
+
+
+  .box:before {
+    width: 1500px;
+    height: 1500px;
+    transform: translateX(-50%);
+    left: 30%;
+    bottom: 68%;
+    right: initial;
+    top: initial;
+    transition: 2s ease-in-out;
+  }
+
+  .box.sign-up-mode:before {
+    transform: translate(-50%, 100%);
+    bottom: 32%;
+    right: initial;
+  }
+
+  .box.sign-up-mode .left-panel,
+  .box.sign-up-mode .left-panel .content {
+    transform: translateY(-300px);
+  }
+
+  .box.sign-up-mode .right-panel,
+  .box.sign-up-mode .right-panel .content {
+    transform: translateY(0px);
+  }
+
+  .right-panel,
+  .right-panel .content {
+    transform: translateY(300px);
+  }
+
+  .box.sign-up-mode .signin-signup {
+    top: 5%;
+    transform: translate(-50%, 0);
+  }
+}
+
+
+
+@media (max-width: 570px) {
+  form {
+    padding: 0 20px;
+  }
+
+  .panel .content {
+    padding: 20px 6px;
+  }
+  .box {
+    padding: 20px;
+  }
+
+  .box:before {
+    bottom: 72%;
+    left: 50%;
+  }
+
+  .box.sign-up-mode:before {
+    bottom: 28%;
+    left: 50%;
+  }
+}

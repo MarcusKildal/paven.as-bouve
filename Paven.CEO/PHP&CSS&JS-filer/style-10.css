@@ -266,7 +266,7 @@ section .title::after {
 
 .homepage {
   display: flex;
-  background: url("vannkraft.jpeg");
+  background: url(bilder-video/vann/vannkraft.jpeg);
   height: 100vh;
   color: firebrick;
   background-size: cover;
@@ -402,18 +402,22 @@ section .title::after {
 
 
 
-/* about section styling Start */
+
+
 
 
 /* about section styling Start */
+
+
+
 
 
 /* etter about tittel, legger jeg til innhold tekst */
 
+
 .about .title::after {
   content: 'who are we';
 }
-
 
 
 /* gir høyde og bredde til bilde, somn er i venstre side.
@@ -427,7 +431,7 @@ section .title::after {
  }
 
 
-/* gir bredde til about teksten, som er i høyre side.
+/* gir bredde til about teksten og hvit farge, som er i høyre side.
    Det betyr at, etter 55% starter bokstavene gå ned over og dermed forsetter man. */
 
 .about .right {
@@ -435,9 +439,13 @@ section .title::after {
 }
 
 .about .right p {
-  position: relative;
-  width: 90%;
+  height: 25px;
+  padding: 4px;
+  margin-top: 10px;
+  margin-left: -1px;
+  color: black;
 }
+
 
 
 /* gir posisjon og fontstørrelse til avsnitt, som er i høyre side.
@@ -477,6 +485,7 @@ section .title::after {
   top: 90px;
   margin-left: 10px;
   color: white;
+  border-radius: 10px;
   background-color: firebrick;
   border: none;
 }
@@ -533,6 +542,9 @@ vise seg. */
  }
 
 
+
+
+
 /* gir høyde og bredde til linje som er bak bilde. */
 
 #about .left {
@@ -580,7 +592,7 @@ vise seg. */
 
 
 .teams {
-  background: url("team-background.jpeg");
+  background: url(bilder-video/personer/team-background.jpeg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -692,8 +704,8 @@ vise seg. */
     background: firebrick;
 }
 
-/* teams section styling End */
 
+/* gir hvit farge til teksten for teams */
 
 p {
   height: 25px;
@@ -703,6 +715,9 @@ p {
   width: 90%;
   color: white;
 }
+
+
+/* teams section styling End */
 
 
 
@@ -784,20 +799,6 @@ footer a:hover {
     max-width: 800px;
   }
 
-
-/* når bredde er 978 til skjermen, så skal menu icon vises på skjermen */
-
- .menu-icon {
-     display: block;
-     z-index: 4;
- }
-
-
- /* når bredde er 978 til skjermen, så skal kryss icon vises på skjermen, men først klikk på menu icon  */
-
- .menu-icon i.active:before {
-     content: "\f00d";
- }
 
 
  /* gir posisjon, høyde, bredde og bakgrunn svart til menu bar bakgrunn. også hvor mye tid skal ta,

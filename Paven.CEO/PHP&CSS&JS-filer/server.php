@@ -5,7 +5,7 @@ $tellFeil = "";
 $tjener = "localhost";
 $brukernavn = "root";
 $passord = "root";
-$database = "Login_system_db"; //Endre på denne til din database
+$database = "Login-system_db"; //Endre på denne til din database
 
 // Opprette en kobling
 $kobling = new mysqli($tjener, $brukernavn, $passord, $database);
@@ -70,13 +70,16 @@ if (!filter_var($epost, FILTER_VALIDATE_EMAIL)) {
   echo "Ugyldig e-postformat";
   $tellFeil = 1;
 }
+
 $sql_sjekkOmBrukernavnEllerEpostFinnes = "SELECT * FROM brukere
 WHERE epost='$epost' OR brukernavn = '$brukernavn'";
 $resultat_sjekkOmBrukernavnEllerEpostFinnes = $kobling->query($sql_sjekkOmBrukernavnEllerEpostFinnes);
+
 if($resultat_sjekkOmBrukernavnEllerEpostFinnes->num_rows > 0) {
   echo "Eposten eller brukernavnet du skrev er registrert";
   $tellFeil = 1;
 }
+
 if($tellFeil < 1) {
   $passord = md5($passord_1); // kryptere passord
 
@@ -89,6 +92,10 @@ if($tellFeil < 1) {
     }
   }
 }
+
+
+
+
 
 if(isset($_POST["logginn"])) {
   $brukernavn = $_POST["brukernavn"];
@@ -104,6 +111,7 @@ if(isset($_POST["logginn"])) {
     $tellFeil = 1;
   }
 
+
   // hvis det ikke er noen feil
   if($tellFeil < 1) {
   $passordKrypter = md5($passord);
@@ -118,6 +126,7 @@ if(isset($_POST["logginn"])) {
     $_SESSION["epost"] = $row_bruker->epost;
     $_SESSION["brukernavn"] = $row_bruker->brukernavn;
     $_SESSION["passord"] = $row_bruker->passord;
+
     header("location: index.php");
   } else {
     echo "Brukeren er ikke registrert (enten er brukernavn eller passord feil)!";
