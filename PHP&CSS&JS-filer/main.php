@@ -169,16 +169,16 @@ if(empty($_SESSION["id"])) {
 <!-- about section End -->
 
 
-<section class="Api-about" id="Api-about">
+<section class="api" id="api">
 
   <div class="max-width">
 
-    <h2 class="Api-title">About us</h2>
+    <h2 class="api-title">About us</h2>
 
-    <div class="Api-at">
+    <div class="api-at">
 
 
-     <div class="left">
+     <div class="api-left">
 
       <div class="about-image">
         <img src="bilder-video/vann/vannkraft-2.jpeg" alt="Bilde av meg">
@@ -187,8 +187,8 @@ if(empty($_SESSION["id"])) {
      </div>
 
 
-      <div class="right">
-        <div class="text">We are the Paven organization: <span class="typing-2"></span></div>
+      <div class="api-right">
+        <div class="api-text">We are the Paven organization: <span class="typing-2"></span></div>
         <p>Welcome to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
       </div>
 

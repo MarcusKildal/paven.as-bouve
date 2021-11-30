@@ -600,7 +600,65 @@ vise seg. */
 
 /* API section styling Start */
 
-.about .title::after {
+.api, .teams {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* gir alle disse posisjon, mellerom og bytter retning når skjermen blir mindre. */
+
+.api .api-at {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+/* alle seksjoner tittel får font, posisjon, fontstørrelse og hvor mye tykt skal de være. */
+
+section .api-title {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* legger til innhold bokser som er My skills og About me
+   og gir de posisjon, bredde, høyde og bakgrunn svart */
+
+section .api-title::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 180px;
+  height: 3px;
+  background: black;
+  transform: translate(-50%);
+}
+
+
+/* gir posisjon, fontstørrelse og bakgrunn hvit, til innhold tekst som er i My skills og About me. */
+
+section .api-title::after {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  font-size: 20px;
+  color: firebrick;
+  padding: 5px;
+  background: white;
+  transform: translate(-50%);
+}
+/* etter about tittel, legger jeg til innhold tekst */
+
+
+.api .api-title::after {
   content: 'who are we';
 }
 
@@ -608,7 +666,7 @@ vise seg. */
 /* gir høyde og bredde til bilde, somn er i venstre side.
    Derette skal bilde passe inn i, gitt høyde og bredde */
 
-.about .left img {
+.api .api-left img {
 
   	height: 100%;
   	width: 100%;
@@ -619,11 +677,11 @@ vise seg. */
 /* gir bredde til about teksten og hvit farge, som er i høyre side.
    Det betyr at, etter 55% starter bokstavene gå ned over og dermed forsetter man. */
 
-.about .right {
+.api .api-right {
   width: 55%;
 }
 
-.about .right p {
+.api .api-right p {
   height: 25px;
   padding: 4px;
   margin-top: 10px;
@@ -636,7 +694,7 @@ vise seg. */
 /* gir posisjon og fontstørrelse til avsnitt, som er i høyre side.
    også hvor mye tykt skal den være. */
 
-.about .right .text {
+.api .api-right .api-text {
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -645,16 +703,22 @@ vise seg. */
 
 /* gir blå farge til teksten som blir skrevet i about. */
 
-.about .at .right .text span {
+.api .api-at .api-right .api-text span {
     color:firebrick;
 }
 
+/* gir alle disse posisjon, mellerom og bytter retning når skjermen blir mindre. */
 
-
+.api .api-at {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
 /* gir høyde og bredde til linje som er bak bilde. */
 
-#about .left {
+#api .api-left {
   width: 380px;
   height: 460px;
  }
@@ -662,7 +726,7 @@ vise seg. */
  
  /* gir høyde, bredde, posisjon og hvit farge, til box som er rundt bilde. */
  
- #about .about-image {
+ #api .about-image {
    height: 80%;
    width: 70%;
    position: relative;
@@ -672,7 +736,7 @@ vise seg. */
  
  /* gir høyde, bredde, verdi, posisjon og blå farge til innhold box som er bak bilde. */
  
- #about .left .about-image::after {
+ #api .api-left .about-image::after {
    content: '';
    position: absolute;
    left: -30px;
@@ -682,8 +746,6 @@ vise seg. */
    border: 7px solid crimson;
    z-index: -1;
  }
- 
- 
 /* API section styling End */
 
 
