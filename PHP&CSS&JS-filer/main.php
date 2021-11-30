@@ -169,6 +169,35 @@ if(empty($_SESSION["id"])) {
 <!-- about section End -->
 
 
+<section class="Api-about" id="Api-about">
+
+  <div class="max-width">
+
+    <h2 class="Api-title">About us</h2>
+
+    <div class="Api-at">
+
+
+     <div class="left">
+
+      <div class="about-image">
+        <img src="bilder-video/vann/vannkraft-2.jpeg" alt="Bilde av meg">
+      </div>
+
+     </div>
+
+
+      <div class="right">
+        <div class="text">We are the Paven organization: <span class="typing-2"></span></div>
+        <p>Welcome to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</section>
 
 
 
@@ -227,13 +256,31 @@ if(empty($_SESSION["id"])) {
 
        <div class="foto">
 
-        <div class="box">
-           <img src="bilder-video/personer/Ludvig.png" alt="Ludvig">
-           <div class="text">"Karl Ludvig Theodor Ringdal</div>
-           <p>Hi, my name is "Ludvig, I like play games and watch football .</p>
-        </div>
+          <div class="box">
+            <img src="bilder-video/personer/Ludvig.png" alt="Ludvig">
+            <div class="text">Karl Ludvig Theodor Ringdal</div>
+            <p>Hi, my name is "Ludvig, I like playing games and watch football.</p>
+          </div>
 
-    </div>
+        </div>
+        <div class="foto">
+
+          <div class="box">
+            <img src="bilder-video/personer/Daniel.png" alt="Daniel">
+            <div class="text">Daniel Eren Yüceyurt Olsen</div>
+            <p>Hi, my name is Daniel, I like playing games and technology.</p>
+          </div>
+
+        </div>
+        <div class="foto">
+
+          <div class="box">
+            <img src="bilder-video/personer/Benjamin.png" alt="Benjamin">
+            <div class="text">Benjamin Reiten</div>
+            <p>Hi, my name is benjamin, I like playing games and watch football.</p>
+          </div>
+
+        </div>
    </div>
 
   </div>

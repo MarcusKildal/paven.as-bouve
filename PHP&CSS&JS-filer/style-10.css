@@ -464,8 +464,20 @@ section .title::after {
     color:firebrick;
 }
 
+/* gir alle disse posisjon, mellerom og bytter retning når skjermen blir mindre. */
+
+.about .at {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
 /* about section styling End */
+
+
+
+
 
 
 
@@ -581,6 +593,98 @@ vise seg. */
 
 
 
+
+
+
+
+
+/* API section styling Start */
+
+.about .title::after {
+  content: 'who are we';
+}
+
+
+/* gir høyde og bredde til bilde, somn er i venstre side.
+   Derette skal bilde passe inn i, gitt høyde og bredde */
+
+.about .left img {
+
+  	height: 100%;
+  	width: 100%;
+  	object-fit: cover;
+ }
+
+
+/* gir bredde til about teksten og hvit farge, som er i høyre side.
+   Det betyr at, etter 55% starter bokstavene gå ned over og dermed forsetter man. */
+
+.about .right {
+  width: 55%;
+}
+
+.about .right p {
+  height: 25px;
+  padding: 4px;
+  margin-top: 10px;
+  margin-left: -1px;
+  color: black;
+}
+
+
+
+/* gir posisjon og fontstørrelse til avsnitt, som er i høyre side.
+   også hvor mye tykt skal den være. */
+
+.about .right .text {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
+/* gir blå farge til teksten som blir skrevet i about. */
+
+.about .at .right .text span {
+    color:firebrick;
+}
+
+
+
+
+/* gir høyde og bredde til linje som er bak bilde. */
+
+#about .left {
+  width: 380px;
+  height: 460px;
+ }
+ 
+ 
+ /* gir høyde, bredde, posisjon og hvit farge, til box som er rundt bilde. */
+ 
+ #about .about-image {
+   height: 80%;
+   width: 70%;
+   position: relative;
+   border: 10px solid white;
+ }
+ 
+ 
+ /* gir høyde, bredde, verdi, posisjon og blå farge til innhold box som er bak bilde. */
+ 
+ #about .left .about-image::after {
+   content: '';
+   position: absolute;
+   left: -30px;
+   top: 25px;
+   height: 98%;
+   width: 98%;
+   border: 7px solid crimson;
+   z-index: -1;
+ }
+ 
+ 
+/* API section styling End */
 
 
 

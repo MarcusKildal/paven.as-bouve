@@ -34,8 +34,8 @@ $(document).ready(function(){
     // Hvis det er sant, så skal det gjenta igjen og igjen
 
     var typed = new Typed(".typing", {
-        strings: ["Bilal Hussain", "Marcus Kildal-Santome", "Alexander Carl Brunskow", "Karl Ludvig Theodor Ringdal", "Web Designer"],
-        typeSpeed: 100,
+        strings: ["Bilal Hussain", "Marcus Kildal-Santome", "Alexander Carl Brunskow", "Karl Ludvig Theodor Ringdal", "Daniel Eren Yüceyurt Olsen","Benjamin Reiten", "Web Designers"],
+        typeSpeed: 80,
         backSpeed: 60,
         loop: true
     });
@@ -46,8 +46,8 @@ $(document).ready(function(){
     // Hvis det er sant, så skal det gjenta igjen og igjen
 
     var typed = new Typed(".typing-2", {
-        strings: ["Bilal Hussain", "Marcus Kildal-Santome", "Alexander Carl Brunskow", "Karl Ludvig Theodor Ringdal", "Web Designer"],
-        typeSpeed: 100,
+        strings: ["Bilal Hussain", "Marcus Kildal-Santome", "Alexander Carl Brunskow", "Karl Ludvig Theodor Ringdal", "Daniel Eren Yüceyurt Olsen","Benjamin Reiten", "Web Designers"],
+        typeSpeed: 80,
         backSpeed: 60,
         loop: true
     });
