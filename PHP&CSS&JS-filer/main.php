@@ -307,7 +307,13 @@ if(empty($_SESSION["id"])) {
 
 
 
-
+Strømpris: <span id="eksempelPlassForStrompris"></span>
+<script>
+    const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
+    fetch(" https://innafjord.azurewebsites.net/api/PowerPrice").then(response =>response.json()).then(value => {
+        eksempelPlassForStromprisElement.innerText = value;
+    });
+</script>
 
 <!-- linker til javascript -->
 
