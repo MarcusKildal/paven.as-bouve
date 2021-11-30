@@ -257,7 +257,7 @@ if(empty($_SESSION["id"])) {
        <div class="foto">
 
           <div class="box">
-            <img src="bilder-video/personer/Ludvig.png" alt="Ludvig">
+            <img src="bilder-video/personer/Ludvig.jpeg" alt="Ludvig">
             <div class="text">Karl Ludvig Theodor Ringdal</div>
             <p>Hi, my name is "Ludvig, I like playing games and watch football.</p>
           </div>
@@ -266,7 +266,7 @@ if(empty($_SESSION["id"])) {
         <div class="foto">
 
           <div class="box">
-            <img src="bilder-video/personer/Daniel.png" alt="Daniel">
+            <img src="bilder-video/personer/Daniel.jpeg" alt="Daniel">
             <div class="text">Daniel Eren Yüceyurt Olsen</div>
             <p>Hi, my name is Daniel, I like playing games and technology.</p>
           </div>
@@ -275,7 +275,7 @@ if(empty($_SESSION["id"])) {
         <div class="foto">
 
           <div class="box">
-            <img src="bilder-video/personer/Benjamin.png" alt="Benjamin">
+            <img src="bilder-video/personer/Benjamin.jpeg" alt="Benjamin">
             <div class="text">Benjamin Reiten</div>
             <p>Hi, my name is benjamin, I like playing games and watch football.</p>
           </div>
