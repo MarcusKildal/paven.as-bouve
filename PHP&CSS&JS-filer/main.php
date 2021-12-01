@@ -173,7 +173,7 @@ if(empty($_SESSION["id"])) {
 
   <div class="max-width">
 
-    <h2 class="api-title">API</h2>
+    <h2 class="api-title">APIs</h2>
 
     <div class="api-at">
 
