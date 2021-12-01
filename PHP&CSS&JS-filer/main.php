@@ -183,39 +183,28 @@ if(empty($_SESSION["id"])) {
         <div class="api-text">powerprice<span class="typing-2"></span></div>
         <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
       </div>
-      <div class="api-right">
+      <div class="api-left">
         <div class="api-text">waterpower<span></span></div>
         <p>This is innafjords powerprice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
       </div>
-      <div class="api-right">
+      <div class="api-left">
         <div class="api-text">enrgiprice<span></span></div>
         <p>This is innafjords powerprice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
       </div>
-      <div class="api-right">
+      <div class="api-left">
         <div class="api-text">profit<span></span></div>
         <p>This is innafjords powerprice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
       </div>
-      <div class="api-right">
+      <div class="api-left">
         <div class="api-text">waterheight<span></span></div>
         <p>This is innafjords powerprice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
       </div>
-      <div class="api-right">
+      <div class="api-left">
         <div class="api-text">naturecost<span></span></div>
         <p>This is innafjords powerprrice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
       </div>
 
-        Strømpris: <span id="eksempelPlassForStrompris"></span>
-        vanninnstrømning: <span id="vanninnstrømning"></span>
-        <script>
-            const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
-            fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
-                eksempelPlassForStromprisElement.innerText = value;});
-
-            const vanninnstrømning = document.getElementById("vanninnstrømning");
-            fetch("https://innafjord.azurewebsites.net/api/WaterInflux").then(response => response.json()).then(value => {
-                vanninnstrømning.innerText = value;
-            });
-        </script>
+        
     </div>
 
   </div>
