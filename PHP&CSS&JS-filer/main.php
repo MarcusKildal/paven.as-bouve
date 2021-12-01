@@ -178,14 +178,6 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
 
-     <div class="api-left">
-
-      <div class="about-image">
-        <img src="bilder-video/vann/vannkraft-2.jpeg" alt="Bilde av meg">
-      </div>
-
-     </div>
-
 
       <div class="api-right">
         <div class="api-text">We are the Paven organization: <span class="typing-2"></span></div>
