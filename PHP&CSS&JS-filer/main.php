@@ -173,48 +173,142 @@ if(empty($_SESSION["id"])) {
 
   <div class="max-width">
 
-    <h2 class="api-title">APIs</h2>
+    <h2 class="api-title">Powerprice</h2>
 
     <div class="api-at">
-
-
 
       <div class="api-left">
         <div class="api-text">powerprice<span class="typing-2"></span></div>
         <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
       </div>
-      <div class="api-left">
-        <div class="api-text">waterpower<span></span></div>
-        <p>This is innafjords powerprice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
-      </div>
-      <div class="api-left">
-        <div class="api-text">enrgiprice<span></span></div>
-        <p>This is innafjords powerprice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
-      </div>
-      <div class="api-left">
-        <div class="api-text">profit<span></span></div>
-        <p>This is innafjords powerprice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
-      </div>
-      <div class="api-left">
-        <div class="api-text">waterheight<span></span></div>
-        <p>This is innafjords powerprice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
-      </div>
-      <div class="api-left">
-        <div class="api-text">naturecost<span></span></div>
-        <p>This is innafjords powerprrice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
-      </div>
-
         
     </div>
 
   </div>
 
+</section>
+
+
+
+<section class="api" id="api">
+
+  <div class="max-width">
+
+    <h2 class="api-title">Waterpower</h2>
+
+    <div class="api-at">
+
+      <div class="api-left">
+        <div class="api-text">powerprice<span class="typing-2"></span></div>
+        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+      </div>
+        
+    </div>
+
+  </div>
 
 </section>
 
 
 
+<section class="api" id="api">
 
+  <div class="max-width">
+
+    <h2 class="api-title">Electricity price</h2>
+
+    <div class="api-at">
+
+      <div class="api-left">
+        <div class="api-text">Earnings<span class="typing-2"></span></div>
+        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+      </div>
+        
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="api" id="api">
+
+  <div class="max-width">
+
+    <h2 class="api-title">Earnings</h2>
+
+    <div class="api-at">
+
+      <div class="api-left">
+        <div class="api-text">Power price<span class="typing-2"></span></div>
+        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+      </div>
+        
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="api" id="api">
+
+  <div class="max-width">
+
+    <h2 class="api-title">Waterheight</h2>
+
+    <div class="api-at">
+
+      <div class="api-left">
+        <div class="api-text">powerprice<span class="typing-2"></span></div>
+        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+      </div>
+        
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="api" id="api">
+
+  <div class="max-width">
+
+    <h2 class="api-title">Nature Cost</h2>
+
+    <div class="api-at">
+
+      <div class="api-left">
+        <div class="api-text">powerprice<span class="typing-2"></span></div>
+        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+      </div>
+        
+    </div>
+
+  </div>
+
+</section>
+
+<section class="api" id="api">
+
+  <div class="max-width">
+
+    <h2 class="api-title">Turbins</h2>
+
+    <div class="api-at">
+
+      <div class="api-left">
+        <div class="api-text">powerprice<span class="typing-2"></span></div>
+        <p>hviser GIF (av av å på turbiner).</p>
+      </div>
+        
+    </div>
+
+  </div>
+
+</section>
 
   <!-- teams section Start -->
 
@@ -300,6 +394,8 @@ if(empty($_SESSION["id"])) {
   Strømpris: <span id="eksempelPlassForStrompris"></span>
         vanninnstrømning: <span id="vanninnstrømning"></span>
         <script>
+
+          function strompris() {
             const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
             fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
                 eksempelPlassForStromprisElement.innerText = value;});
@@ -307,7 +403,13 @@ if(empty($_SESSION["id"])) {
             const vanninnstrømning = document.getElementById("vanninnstrømning");
             fetch("https://innafjord.azurewebsites.net/api/WaterInflux").then(response => response.json()).then(value => {
                 vanninnstrømning.innerText = value;
+                console.log(value)
             });
+            
+          }
+
+          // setInterval(strompris, 500)
+            
         </script>
 </section>
 
