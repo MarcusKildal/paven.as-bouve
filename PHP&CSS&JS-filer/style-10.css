@@ -668,11 +668,11 @@ section .api-title::after {
 /* gir bredde til about teksten og hvit farge, som er i høyre side.
    Det betyr at, etter 55% starter bokstavene gå ned over og dermed forsetter man. */
 
-.api .api-right {
+.api .api-left {
   width: 55%;
 }
 
-.api .api-right p {
+.api .api-left p {
   height: 25px;
   padding: 4px;
   margin-top: 10px;
@@ -685,7 +685,7 @@ section .api-title::after {
 /* gir posisjon og fontstørrelse til avsnitt, som er i høyre side.
    også hvor mye tykt skal den være. */
 
-.api .api-right .api-text {
+.api .api-left .api-text {
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -694,7 +694,7 @@ section .api-title::after {
 
 /* gir blå farge til teksten som blir skrevet i about. */
 
-.api .api-at .api-right .api-text span {
+.api .api-at .api-left .api-text span {
     color:firebrick;
 }
 
