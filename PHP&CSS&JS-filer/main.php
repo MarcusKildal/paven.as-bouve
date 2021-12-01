@@ -173,15 +173,15 @@ if(empty($_SESSION["id"])) {
 
   <div class="max-width">
 
-    <h2 class="api-title">APIs</h2>
+    <h2 class="api-title">API</h2>
 
     <div class="api-at">
 
 
 
       <div class="api-right">
-        <div class="api-text">powerprice<span class="typing-2"></span></div>
-        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+        <div class="api-text">powerprice<span></span></div>
+        <p>This is innafjords powerprice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
       </div>
         Strømpris: <span id="eksempelPlassForStrompris"></span>
         vanninnstrømning: <span id="vanninnstrømning"></span>
