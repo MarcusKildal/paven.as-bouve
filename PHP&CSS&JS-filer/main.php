@@ -201,7 +201,7 @@ if(empty($_SESSION["id"])) {
       </div>
       <div class="api-right">
         <div class="api-text">naturecost<span></span></div>
-        <p>This is innafjords powerprice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
+        <p>This is innafjords powerprrice to their turbins as you can see on the grapfs u see how much it is NOW and how much it has been latly.</p>
       </div>
 
         Strømpris: <span id="eksempelPlassForStrompris"></span>
