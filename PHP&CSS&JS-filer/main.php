@@ -182,6 +182,18 @@ if(empty($_SESSION["id"])) {
       <div class="api-right">
         <div class="api-text">We are the Paven organization: <span class="typing-2"></span></div>
         <p>Welcome to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+        Strømpris: <span id="eksempelPlassForStrompris"></span>
+        vanninnstrømning: <span id="vanninnstrømning"></span>
+        <script>
+            const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
+            const vanninnstrømning = document.getElementById("vanninnstrømning");
+            fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
+                eksempelPlassForStromprisElement.innerText = value;
+            });
+            fetch("https://innafjord.azurewebsites.net/api/WaterInflux").then(response => response.json()).then(value => {
+                vanninnstrømning.innerText = value;
+            });
+        </script>
       </div>
 
     </div>
