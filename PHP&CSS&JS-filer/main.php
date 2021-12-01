@@ -181,7 +181,7 @@ if(empty($_SESSION["id"])) {
 
       <div class="api-right">
         <div class="api-text">powerprice<span class="typing-2"></span></div>
-        <p>Welcome to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
       </div>
         Strømpris: <span id="eksempelPlassForStrompris"></span>
         vanninnstrømning: <span id="vanninnstrømning"></span>
