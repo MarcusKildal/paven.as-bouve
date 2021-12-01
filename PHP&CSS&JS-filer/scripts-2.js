@@ -124,7 +124,7 @@ $('.ts').owlCarousel({
   margin: 5,
   loop: true,
   autoplay: true,
-  autoplayTimeout:2500,  
+  autoplayTimeout:2000,  
   autoplayHoverPause: true,
   
 });
