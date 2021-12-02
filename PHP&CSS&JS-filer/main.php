@@ -307,7 +307,36 @@ if(empty($_SESSION["id"])) {
     </div>
 
   </div>
+  <br>
+Strompris: <span id="eksempelPlassForStrompris"></span> <br>
+vanninnstromning: <span id="vanninnstromning"></span> <br>
+Money: <span id="groupstates_money"></span> <br>
+EnvironmentCost: <span id="groupstates_environmentCost"></span> <br>
+WaterLevel: <span id="groupstates_waterLevel"></span>
+        <script>
+          function strompris() {
+            const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
+            fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
+                eksempelPlassForStromprisElement.innerText = value;});
 
+            const vanninnstromning = document.getElementById("vanninnstromning");
+            fetch("https://innafjord.azurewebsites.net/api/WaterInflux").then(response => response.json()).then(value => {
+                vanninnstromning.innerText = value;});
+            
+            const money = document.getElementById("groupstates_money");
+            const environmentCost = document.getElementById("groupstates_environmentCost");
+            const waterLevel = document.getElementById("groupstates_waterLevel");
+            fetch("https://innafjord.azurewebsites.net/api/GroupState",{
+              headers: {
+              "GroupId": "Paven AS",
+              "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}}).then(response => response.json()).then(value => {
+                money.innerText = value.money;
+                environmentCost.innerText = value.environmentCost;
+                waterLevel.innerText = value.waterLevel;
+              })
+          };
+          setInterval(strompris,1000)
+        </script>
 </section>
 
   <!-- teams section Start -->
@@ -386,31 +415,11 @@ if(empty($_SESSION["id"])) {
             <div class="text">Benjamin Reiten</div>
             <p>Hi, my name is benjamin, I like playing games and watch football.</p>
           </div>
-
         </div>
    </div>
 
   </div>
-  Strømpris: <span id="eksempelPlassForStrompris"></span>
-        vanninnstrømning: <span id="vanninnstrømning"></span>
-        <script>
 
-          function strompris() {
-            const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
-            fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
-                eksempelPlassForStromprisElement.innerText = value;});
-
-            const vanninnstrømning = document.getElementById("vanninnstrømning");
-            fetch("https://innafjord.azurewebsites.net/api/WaterInflux").then(response => response.json()).then(value => {
-                vanninnstrømning.innerText = value;
-                console.log(value)
-            });
-            
-          }
-
-          // setInterval(strompris, 500)
-            
-        </script>
 </section>
 
 <!-- teams section End -->
