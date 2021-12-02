@@ -312,7 +312,9 @@ Strompris: <span id="eksempelPlassForStrompris"></span> <br>
 vanninnstromning: <span id="vanninnstromning"></span> <br>
 Money: <span id="groupstates_money"></span> <br>
 EnvironmentCost: <span id="groupstates_environmentCost"></span> <br>
-WaterLevel: <span id="groupstates_waterLevel"></span>
+WaterLevel: <span id="groupstates_waterLevel"></span><br>
+turbin: <span id="groupstates_turbin"></span>
+
         <script>
           function strompris() {
             const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
@@ -334,9 +336,25 @@ WaterLevel: <span id="groupstates_waterLevel"></span>
                 environmentCost.innerText = value.environmentCost;
                 waterLevel.innerText = value.waterLevel;
               })
+            const capacityUsage = document.getElementById("groupstates_turbin");
+            fetch("https://innafjord.azurewebsites.net/api/Turbines",{
+              headers: {
+              "GroupId": "Paven AS",
+              "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}}).then(response => response.json()).then(value => {
+                capacityUsage.innerText = value.capacityUsage;
+
+                let usage = "";
+                for (let i = 0; i += capacityUsage; i++){
+                  usage += capacityUsage + "br";
+                }
+
+              })
           };
           setInterval(strompris,1000)
         </script>
+
+
+
 </section>
 
   <!-- teams section Start -->
