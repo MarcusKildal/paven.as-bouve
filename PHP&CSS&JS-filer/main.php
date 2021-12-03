@@ -377,12 +377,6 @@ turbin: <span id="groupstates_turbin"></span>
           setInterval(strompris,1000)
         </script>
 
-<script>
-
-
-    
-  
-</script>
 
 </section>
 
