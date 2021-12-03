@@ -32,6 +32,8 @@ if(empty($_SESSION["id"])) {
   <!-- Legger til script kode for menu-bar icon -->
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 
   <!-- Legger til script kode for menu-bar, menu-bar icon, skrivene tekst og teams bokser -->
 
@@ -318,12 +320,16 @@ turbin: <span id="groupstates_turbin"></span>
         <script>
           let turbiner = [];
           let watervalue;
+         
 
           function strompris() {
             const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
             fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
                 eksempelPlassForStromprisElement.innerText = value;});
+              
 
+
+      
             const vanninnstromning = document.getElementById("vanninnstromning");
             fetch("https://innafjord.azurewebsites.net/api/WaterInflux").then(response => response.json()).then(value => {
                 vanninnstromning.innerText = value;});
@@ -460,6 +466,7 @@ turbin: <span id="groupstates_turbin"></span>
    </div>
 
   </div>
+  <div id="myPlot" style="width:100%;max-width:700px"></div>
 
 </section>
 
@@ -490,3 +497,30 @@ turbin: <span id="groupstates_turbin"></span>
  </body>
 
 </html>
+
+function strompris() {
+            let strompriser = [];
+            let tidspunkt = [];
+          
+            const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
+            fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
+                eksempelPlassForStromprisElement.innerText = value;
+                strompriser.push(value);
+                tidspunkt.push(Date.now());
+            });
+            var data = [{
+              x: tidspunkt,
+              y: strompriser,
+              mode: "lines",
+              type: "scatter"
+            }];
+
+            // Define Layout
+            var layout = {
+              xaxis: {title: "tidspunkt"},
+              yaxis: {title: "Strømpris"},
+              title: "House Prices vs Size"
+            };
+
+              // Display using Plotly
+              Plotly.newPlot("myPlot", data, layout);
