@@ -316,6 +316,9 @@ WaterLevel: <span id="groupstates_waterLevel"></span><br>
 turbin: <span id="groupstates_turbin"></span>
 
         <script>
+          let turbiner = [];
+          let watervalue;
+
           function strompris() {
             const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
             fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
@@ -335,25 +338,51 @@ turbin: <span id="groupstates_turbin"></span>
                 money.innerText = value.money;
                 environmentCost.innerText = value.environmentCost;
                 waterLevel.innerText = value.waterLevel;
+                watervalue = value.waterLevel
               })
-            const capacityUsage = document.getElementById("groupstates_turbin");
+
+
+            const test = document.getElementById("groupstates_turbin");
             fetch("https://innafjord.azurewebsites.net/api/Turbines",{
               headers: {
               "GroupId": "Paven AS",
               "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}}).then(response => response.json()).then(value => {
-                capacityUsage.innerText = value.capacityUsage;
 
-                let usage = "";
-                for (let i = 0; i += capacityUsage; i++){
-                  usage += capacityUsage + "br";
-                }
+                test.innerHTML = "";
+                for (let id = 0; id < value.length; id++){
+                  test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" +  value[id].capacityUsage;
+                  turbiner.push(value[id]);
+                }})
 
-              })
+            if (watervalue < 41) {
+              for(let turbin of turbiner){
+                fetch(`https://innafjord.azurewebsites.net/api/Turbines/${turbin.id}?capacityUsage=0`, {
+                method: "PUT",
+                headers: {
+                "GroupId": "Paven AS",
+                "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
+              }
+            }else if (watervalue > 49){
+              for(let turbin of turbiner){
+                fetch(`https://innafjord.azurewebsites.net/api/Turbines/${turbin.id}?capacityUsage=1`, {
+                method: "PUT",
+                headers: {
+                "GroupId": "Paven AS",
+                "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
+              }
+            }
+
+            
           };
           setInterval(strompris,1000)
         </script>
 
+<script>
 
+
+    
+  
+</script>
 
 </section>
 
