@@ -158,7 +158,7 @@ if(empty($_SESSION["id"])) {
 
       <div class="right">
         <div class="text">We are the Paven organization: <span class="typing-2"></span></div>
-        <p>Welcome to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+        <p>Welcome to our website! On our website you get alot of information and status for hydropower.</p>
       </div>
 
     </div>
@@ -180,7 +180,7 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">powerprice<span class="typing-2"></span></div>
+        <div class="api-text">Powerprice<span class="typing-2"></span></div>
         <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
       </div>
         
@@ -201,7 +201,7 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">powerprice<span class="typing-2"></span></div>
+        <div class="api-text">Waterpower<span class="typing-2"></span></div>
         <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
       </div>
         
@@ -222,7 +222,7 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">Earnings<span class="typing-2"></span></div>
+        <div class="api-text">Electricity price<span class="typing-2"></span></div>
         <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
       </div>
         
@@ -243,8 +243,8 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">Power price<span class="typing-2"></span></div>
-        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+        <div class="api-text">Earnings<span class="typing-2"></span></div>
+        <p>Welcome to our website. On our website you can get alot of information and status for hydropower.</p>
       </div>
         
     </div>
@@ -263,7 +263,7 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">powerprice<span class="typing-2"></span></div>
+        <div class="api-text">Waterheight<span class="typing-2"></span></div>
         <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
       </div>
         
@@ -283,7 +283,7 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">powerprice<span class="typing-2"></span></div>
+        <div class="api-text">Nature cost<span class="typing-2"></span></div>
         <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
       </div>
         
@@ -302,8 +302,8 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">powerprice<span class="typing-2"></span></div>
-        <p>hviser GIF (av av å på turbiner).</p>
+        <div class="api-text">Turbins<span class="typing-2"></span></div>
+        <p>viser GIF (av av å på turbiner).</p>
       </div>
         
     </div>
