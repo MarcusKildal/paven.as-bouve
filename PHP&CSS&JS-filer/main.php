@@ -323,15 +323,22 @@ turbin: <span id="groupstates_turbin"></span>
           let strompriser = [];
           let tidspunkt = [];
 
+          const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
+          const vanninnstromning = document.getElementById("vanninnstromning");
+          const money = document.getElementById("groupstates_money");
+          const environmentCost = document.getElementById("groupstates_environmentCost");
+          const waterLevel = document.getElementById("groupstates_waterLevel");
+          const test = document.getElementById("groupstates_turbin");
+
           function strompris() {
-            const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
+            
             fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
                 eksempelPlassForStromprisElement.innerText = value;
                 strompriser.push(value);
                 tidspunkt.push(Date.now());
 
 
-                var data = [{
+            var data = [{
               x: tidspunkt,
               y: strompriser,
               mode: "lines",
@@ -350,16 +357,19 @@ turbin: <span id="groupstates_turbin"></span>
               
               });
              
+            };
+
+          setInterval(strompris,1000)
 
 
-  
-            const vanninnstromning = document.getElementById("vanninnstromning");
+          function water () {
             fetch("https://innafjord.azurewebsites.net/api/WaterInflux").then(response => response.json()).then(value => {
                 vanninnstromning.innerText = value;});
             
-            const money = document.getElementById("groupstates_money");
-            const environmentCost = document.getElementById("groupstates_environmentCost");
-            const waterLevel = document.getElementById("groupstates_waterLevel");
+            };
+            setInterval(water,1000)
+       
+            function verdier(){
             fetch("https://innafjord.azurewebsites.net/api/GroupState",{
               headers: {
               "GroupId": "Paven AS",
@@ -369,9 +379,13 @@ turbin: <span id="groupstates_turbin"></span>
                 waterLevel.innerText = value.waterLevel;
                 watervalue = value.waterLevel
               })
+            };
+            setInterval(verdier,1000)
 
 
-            const test = document.getElementById("groupstates_turbin");
+            
+
+            function FTurbiner(){
             fetch("https://innafjord.azurewebsites.net/api/Turbines",{
               headers: {
               "GroupId": "Paven AS",
@@ -391,6 +405,7 @@ turbin: <span id="groupstates_turbin"></span>
                 "GroupId": "Paven AS",
                 "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
               }
+
             }else if (watervalue > 49){
               for(let turbin of turbiner){
                 fetch(`https://innafjord.azurewebsites.net/api/Turbines/${turbin.id}?capacityUsage=1`, {
@@ -400,12 +415,10 @@ turbin: <span id="groupstates_turbin"></span>
                 "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
               }
             }
-
-            
           };
-          setInterval(strompris,1000)
-        </script>
+          setInterval(FTurbiner,1000)
 
+        </script>
 
 </section>
 
