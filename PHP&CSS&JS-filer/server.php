@@ -12,7 +12,7 @@ $kobling = new mysqli($tjener, $brukernavn, $passord, $database);
 
 // Sjekk om koblingen virker
 if($kobling->connect_error) {
-  die("Noe gikk galt: " . $kobling->connect_error);
+  die("Something went wrong: " . $kobling->connect_error);
 } else {
   // echo "Koblingen virker.<br>";
 }
@@ -34,40 +34,40 @@ if(isset($_POST["registrer"])) {
 // if-setning, teller feilmeldinger
 
   if(empty($brukernavn)) {
-    $tomtBrukernavn = "Brukernavn er påkrevd <br>";
+    $tomtBrukernavn = "A username is required.<br>";
     $tellFeil = 1;
   }
   if(empty($epost)) {
-    $tomtBrukernavn = "E-post er påkrevd <br>";
+    $tomtBrukernavn = "A email is required.<br>";
     $tellFeil = 1;
   }
   if(empty($fornavn)) {
-    $tomtBrukernavn = "Fornavn er påkrevd<br>";
+    $tomtBrukernavn = "Firstname is required.<br>";
     $tellFeil = 1;
   }
   if(empty($etternavn)) {
-    $tomtBrukernavn = "Etternavn er påkrevd<br>";
-    echo "Etternavn er påkrevd<br><br>";
+    $tomtBrukernavn = "Lastname is required.<br>";
+    echo "Lastname is required.<br><br>";
     $tellFeil = 1;
   }
   if(empty($passord_1)) {
-    $tomtBrukernavn = "Lag et passord er påkrevd<br>";
+    $tomtBrukernavn = "A password is required.<br>";
     $tellFeil = 1;
   }
   if(empty($passord_2)) {
-    $tomtBrukernavn = "Bekreft passord er påkrevd<br>";
+    $tomtBrukernavn = "You must confirm your password.<br>";
     $tellFeil = 1;
   }
 
   // er passordene ulike?
   if($passord_1 != $passord_2) {
-    $tomtBrukernavn = "Passordene må være lik<br>";
+    $tomtBrukernavn = "The passwords have to be equal<br>";
     $tellFeil = 1;
   }
 
 // er eposten gyldig?
 if (!filter_var($epost, FILTER_VALIDATE_EMAIL)) {
-  echo "Ugyldig e-postformat";
+  echo "Wrong email format.";
   $tellFeil = 1;
 }
 
@@ -76,7 +76,7 @@ WHERE epost='$epost' OR brukernavn = '$brukernavn'";
 $resultat_sjekkOmBrukernavnEllerEpostFinnes = $kobling->query($sql_sjekkOmBrukernavnEllerEpostFinnes);
 
 if($resultat_sjekkOmBrukernavnEllerEpostFinnes->num_rows > 0) {
-  echo "Eposten eller brukernavnet du skrev er registrert";
+  echo "The email is already in use or the username is taken.";
   $tellFeil = 1;
 }
 
@@ -86,9 +86,9 @@ if($tellFeil < 1) {
   $sql_registrerBruker = "INSERT INTO brukere (epost, fornavn, etternavn, passord, brukernavn)
   VALUES ('$epost','$fornavn','$etternavn','$passord','$brukernavn')";
   if($kobling->query($sql_registrerBruker)) {
-    echo "Brukeren er registrert! Du kan logge inn deg nå:";
+    echo "The username is registered. You can log in now.:";
   } else {
-    echo "Uventet feil under prosses!";
+    echo "Unexpected error during the process.";
     }
   }
 }
@@ -103,11 +103,11 @@ if(isset($_POST["logginn"])) {
   
   // sjekk om bruker finnes (brukernavn eller passord)
   if(empty($brukernavn)) {
-    echo "Brukernavn er obligatorisk <br>";
+    echo "A username is required.<br>";
     $tellFeil = 1;
   }
   if(empty($passord)) {
-    echo "Passord er obligatorisk<br>";
+    echo "A password is required.<br>";
     $tellFeil = 1;
   }
 
@@ -129,7 +129,7 @@ if(isset($_POST["logginn"])) {
 
     header("location: main.php");
   } else {
-    echo "Brukeren er ikke registrert (enten er brukernavn eller passord feil)!";
+    echo "The user is not registered. Either the username or password is wrong!";
     }
   }
 }
