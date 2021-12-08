@@ -183,10 +183,10 @@ if(empty($_SESSION["id"])) {
         <div class="api-text">Powerprice<span class="typing-2"></span></div>
         <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
       </div>
-        
     </div>
-
   </div>
+
+  <div id="myPlot"></div>
 
 </section>
 
@@ -208,6 +208,8 @@ if(empty($_SESSION["id"])) {
     </div>
 
   </div>
+
+  <div id="myPlot-2"></div>
 
 </section>
 
@@ -305,11 +307,14 @@ if(empty($_SESSION["id"])) {
         <div class="api-text">Turbins<span class="typing-2"></span></div>
         <p>viser GIF (av av å på turbiner).</p>
       </div>
-        
-    </div>
+
+      <video class="vdo" id = "vdo" onclick="play();" loop>
+       <source src="../bilder-video/turbin-hoved.mp4" type="video/mp4">
+      </video>
 
   </div>
   <br>
+
 Strompris: <span id="eksempelPlassForStrompris"></span> <br>
 vanninnstromning: <span id="vanninnstromning"></span> <br>
 Money: <span id="groupstates_money"></span> <br>
@@ -321,6 +326,7 @@ turbin: <span id="groupstates_turbin"></span>
           let turbiner = [];
           let watervalue;
           let strompriser = [];
+          let vannstrom = [];
           let tidspunkt = [];
 
           const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
@@ -331,13 +337,13 @@ turbin: <span id="groupstates_turbin"></span>
           const test = document.getElementById("groupstates_turbin");
 
           function strompris() {
-            
+
             fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
                 eksempelPlassForStromprisElement.innerText = value;
                 strompriser.push(value);
                 tidspunkt.push(Date.now());
 
-
+          
             var data = [{
               x: tidspunkt,
               y: strompriser,
@@ -349,7 +355,7 @@ turbin: <span id="groupstates_turbin"></span>
             var layout = {
               xaxis: {title: "tidspunkt"},
               yaxis: {title: "Strømpris"},
-              title: "House Prices vs Size"
+              title: "Strøm"
             };
 
               // Display using Plotly
@@ -362,13 +368,37 @@ turbin: <span id="groupstates_turbin"></span>
           setInterval(strompris,1000)
 
 
+
           function water () {
             fetch("https://innafjord.azurewebsites.net/api/WaterInflux").then(response => response.json()).then(value => {
-                vanninnstromning.innerText = value;});
-            
+                vanninnstromning.innerText = value;
+                vannstrom.push(value);
+                tidspunkt.push(Date.now());
+
+            var data = [{
+              x: tidspunkt,
+              y: vannstrom,
+              mode: "lines",
+              type: "scatter"
+            }];
+
+            // Define Layout
+            var layout = {
+              xaxis: {title: "tidspunkt"},
+              yaxis: {title: "vannstrøm"},
+              title: "Vannstrøm"
+            };
+
+              // Display using Plotly
+              Plotly.newPlot("myPlot-2", data, layout);
+
+            });
+
             };
             setInterval(water,1000)
        
+
+
             function verdier(){
             fetch("https://innafjord.azurewebsites.net/api/GroupState",{
               headers: {
@@ -378,6 +408,7 @@ turbin: <span id="groupstates_turbin"></span>
                 environmentCost.innerText = value.environmentCost;
                 waterLevel.innerText = value.waterLevel;
                 watervalue = value.waterLevel
+              
               })
             };
             setInterval(verdier,1000)
@@ -390,14 +421,14 @@ turbin: <span id="groupstates_turbin"></span>
               headers: {
               "GroupId": "Paven AS",
               "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}}).then(response => response.json()).then(value => {
-
+                
                 test.innerHTML = "";
                 for (let id = 0; id < value.length; id++){
-                  test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" +  value[id].capacityUsage;
+                  test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" + value[id].capacityUsage;
                   turbiner.push(value[id]);
                 }})
 
-            if (watervalue < 41) {
+            if (watervalue < 43) {
               for(let turbin of turbiner){
                 fetch(`https://innafjord.azurewebsites.net/api/Turbines/${turbin.id}?capacityUsage=0`, {
                 method: "PUT",
@@ -406,7 +437,7 @@ turbin: <span id="groupstates_turbin"></span>
                 "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
               }
 
-            }else if (watervalue > 49){
+            }else if (watervalue > 45){
               for(let turbin of turbiner){
                 fetch(`https://innafjord.azurewebsites.net/api/Turbines/${turbin.id}?capacityUsage=1`, {
                 method: "PUT",
@@ -499,10 +530,8 @@ turbin: <span id="groupstates_turbin"></span>
             <p>Hi, my name is benjamin, I like playing games and watch football.</p>
           </div>
         </div>
-   </div>
-
+    </div>
   </div>
-  <div id="myPlot" style="width:100%;max-width:700px"></div>
 
 </section>
 

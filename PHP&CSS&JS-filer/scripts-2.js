@@ -1,11 +1,10 @@
 $(document).ready(function(){
 
   // lager funksjon som gjør at, når blar ned så kommer det blå bakgrunn på menu bar.
-
     $(window).scroll(function(){
 
      // sticky menu-bar on scroll script Start
-
+     
 
     // hvis scrollY er større enn 20, så skal menu bar få blå bakgrunn.
 
@@ -103,6 +102,10 @@ function toggle() {
   var film = document.querySelector('.video')
   film.classList.toggle('active')
 
+// kjører turbiner ved å trykke på de.
+
+  var vdo = document.querySelector('.vdo')
+  vdo.classList.play('active')
 
 // lager variabel for video og sier at ta det bort, den videoen som er valgt.
 // Deretter stopper videoen, når man klikker på kryss icon.
@@ -111,6 +114,8 @@ function toggle() {
   var video = document.querySelector('video')
   video.pause()
   video.currentTime = 0;
+
+  
   
 }
 // creating play button script End
@@ -128,4 +133,3 @@ $('.ts').owlCarousel({
   autoplayHoverPause: true,
   
 });
-

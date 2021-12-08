@@ -718,6 +718,29 @@ section .api-title::after {
  }
  
  
+ .vdo {
+   position: relative;
+   display: inline-flex;
+   width: 300px;
+   height: 300px;
+ }
+
+
+
+#myPlot {
+  position: relative;
+  max-width:700px;
+  width:100%;
+  right: -700px;
+ }
+
+
+#myPlot-2 {
+  position: relative;
+  max-width:700px;
+  width:100%;
+  right: -700px;
+ }
 
 /* API section styling End */
 
