@@ -30,6 +30,7 @@ if(empty($_SESSION["id"])) {
     <title>Welcome to PAVEN.CEO</title>
 
   <!-- linker til favicon bildet -->
+  
     <link rel="icon" type="image/x-icon" href="bilder-video/favicon.ico">
 
   <!-- Legger til script kode for menu-bar icon -->
