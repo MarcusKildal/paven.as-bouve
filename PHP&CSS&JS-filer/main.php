@@ -449,6 +449,8 @@ turbin: <span id="groupstates_turbin"></span>
           };
           setInterval(FTurbiner,1000)
 
+
+    
         </script>
 
 </section>
