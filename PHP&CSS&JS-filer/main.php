@@ -29,6 +29,10 @@ if(empty($_SESSION["id"])) {
 
     <title>Welcome to PAVEN.CEO</title>
 
+  <!-- linker til favicon bildet -->
+  
+    <link rel="icon" type="image/x-icon" href="bilder-video/favicon.ico">
+
   <!-- Legger til script kode for menu-bar icon -->
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -175,7 +179,7 @@ if(empty($_SESSION["id"])) {
 
   <div class="max-width">
 
-    <h2 class="api-title">Powerprice</h2>
+    <h2 class="api-title">Power price</h2>
 
     <div class="api-at">
 
@@ -196,7 +200,7 @@ if(empty($_SESSION["id"])) {
 
   <div class="max-width">
 
-    <h2 class="api-title">Waterpower</h2>
+    <h2 class="api-title">Water power</h2>
 
     <div class="api-at">
 
@@ -270,7 +274,7 @@ if(empty($_SESSION["id"])) {
 
   <div class="max-width">
 
-    <h2 class="api-title">Waterheight</h2>
+    <h2 class="api-title">Water level</h2>
 
     <div class="api-at">
 
@@ -287,7 +291,6 @@ if(empty($_SESSION["id"])) {
   <div id="groupstates_waterLevel"></div>
 
 </section>
-
 
 
 
