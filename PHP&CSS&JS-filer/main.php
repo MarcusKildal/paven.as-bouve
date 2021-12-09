@@ -146,7 +146,7 @@ if(empty($_SESSION["id"])) {
 
   <div class="max-width">
 
-    <h2 class="title">About us</h2>
+    <h2 class="title">About sus</h2>
 
     <div class="at">
 
