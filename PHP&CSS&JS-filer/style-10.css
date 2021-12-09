@@ -409,9 +409,6 @@ section .title::after {
 /* about section styling Start */
 
 
-
-
-
 /* etter about tittel, legger jeg til innhold tekst */
 
 
@@ -424,7 +421,6 @@ section .title::after {
    Derette skal bilde passe inn i, gitt høyde og bredde */
 
 .about .left img {
-
   	height: 100%;
   	width: 100%;
   	object-fit: cover;
@@ -596,8 +592,6 @@ vise seg. */
 
 
 
-
-
 /* API section styling Start */
 
 .api, .teams {
@@ -663,8 +657,6 @@ section .api-title::after {
 }
 
 
-
-
 /* gir bredde til about teksten og hvit farge, som er i høyre side.
    Det betyr at, etter 55% starter bokstavene gå ned over og dermed forsetter man. */
 
@@ -679,7 +671,6 @@ section .api-title::after {
   margin-left: -1px;
   color: black;
 }
-
 
 
 /* gir posisjon og fontstørrelse til avsnitt, som er i høyre side.
@@ -707,24 +698,15 @@ section .api-title::after {
   justify-content: space-between;
 }
 
- 
- /* gir høyde, bredde, posisjon og hvit farge, til box som er rundt bilde. */
- 
- #api .about-image {
-   height: 80%;
-   width: 70%;
-   position: relative;
-   border: 10px solid white;
- }
- 
- 
+
+
  .vdo {
    position: relative;
    display: inline-flex;
    width: 300px;
    height: 300px;
- }
 
+  }
 
 
 #myPlot {
@@ -734,7 +716,6 @@ section .api-title::after {
   right: -700px;
  }
 
-
 #myPlot-2 {
   position: relative;
   max-width:700px;
@@ -742,7 +723,76 @@ section .api-title::after {
   right: -700px;
  }
 
+ #myPlot-3 {
+  position: relative;
+  max-width:700px;
+  width:100%;
+  right: -700px;
+ }
+
+ #myPlot-4 {
+  position: relative;
+  max-width:700px;
+  width:100%;
+  right: -700px;
+ }
+
+ #myPlot-5 {
+  position: relative;
+  max-width:700px;
+  width:100%;
+  right: -700px;
+ }
+
+ #eksempelPlassForStrompris {
+   position: relative;
+   margin-left: 250px;
+   bottom: 420px;
+   font-weight: 900;
+   
+ }
+
+ #vanninnstromning {
+  position: relative;
+  margin-left: 260px;
+  bottom: 420px;
+  font-weight: 900;
+ }
+
+ #groupstates_money {
+  position: relative;
+  margin-left: 330px;
+  bottom: 445px;
+  font-weight: 900;
+ }
+
+#groupstates_environmentCost {
+  position: relative;
+  margin-left: 260px;
+  bottom: 420px;
+  font-weight: 900;
+}
+
+#groupstates_waterLevel {
+  position: relative;
+  margin-left: 260px;
+  bottom: 420px;
+  font-weight: 900;
+}
+
+
+#groupstates_turbin {
+  position: relative;
+  display: flex;
+  margin-left: -50px;
+  height: 70px;
+}
+
+
 /* API section styling End */
+
+
+
 
 
 

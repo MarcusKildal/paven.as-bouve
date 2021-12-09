@@ -180,14 +180,14 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">Powerprice<span class="typing-2"></span></div>
-        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+        <div class="api-text">Powerprice</div>
+        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website. Powerprice: </p>
       </div>
     </div>
   </div>
 
   <div id="myPlot"></div>
-
+<div id="eksempelPlassForStrompris"></div>
 </section>
 
 
@@ -201,38 +201,19 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">Waterpower<span class="typing-2"></span></div>
-        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+        <div class="api-text">Waterpower</div>
+        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website. Waterpower: </p>
       </div>
         
     </div>
 
   </div>
 
-  <div id="myPlot-2"></div>
+   <div id="myPlot-2"></div>
+  <div id ="vanninnstromning"></div>
 
 </section>
 
-
-
-<section class="api" id="api">
-
-  <div class="max-width">
-
-    <h2 class="api-title">Electricity price</h2>
-
-    <div class="api-at">
-
-      <div class="api-left">
-        <div class="api-text">Electricity price<span class="typing-2"></span></div>
-        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
-      </div>
-        
-    </div>
-
-  </div>
-
-</section>
 
 
 
@@ -245,35 +226,19 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">Earnings<span class="typing-2"></span></div>
-        <p>Welcome to our website. On our website you can get alot of information and status for hydropower.</p>
+        <div class="api-text">Earnings</div>
+        <p>Welcome to our website. On our website you can get alot of information and status for hydropower. Money: </p>
       </div>
         
     </div>
 
   </div>
 
+    <div id="myPlot-3"></div>
+    <div id="groupstates_money"></div>
 </section>
 
 
-<section class="api" id="api">
-
-  <div class="max-width">
-
-    <h2 class="api-title">Waterheight</h2>
-
-    <div class="api-at">
-
-      <div class="api-left">
-        <div class="api-text">Waterheight<span class="typing-2"></span></div>
-        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
-      </div>
-        
-    </div>
-
-  </div>
-
-</section>
 
 
 <section class="api" id="api">
@@ -285,49 +250,69 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">Nature cost<span class="typing-2"></span></div>
-        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website.</p>
+        <div class="api-text">Nature cost</div>
+        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website. Nature Cost: </p>
       </div>
         
     </div>
 
   </div>
 
+  <div id="myPlot-4"></div>
+  <div id="groupstates_environmentCost"></div>
+
+  
 </section>
+
+
 
 <section class="api" id="api">
 
   <div class="max-width">
 
-    <h2 class="api-title">Turbins</h2>
+    <h2 class="api-title">Waterheight</h2>
 
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">Turbins<span class="typing-2"></span></div>
-        <p>viser GIF (av av å på turbiner).</p>
+        <div class="api-text">Waterheight</div>
+        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website. Water Level: </p>
       </div>
-
-      <video class="vdo" id = "vdo" onclick="play();" loop>
-       <source src="../bilder-video/turbin-hoved.mp4" type="video/mp4">
-      </video>
+        
+    </div>
 
   </div>
-  <br>
 
-Strompris: <span id="eksempelPlassForStrompris"></span> <br>
-vanninnstromning: <span id="vanninnstromning"></span> <br>
-Money: <span id="groupstates_money"></span> <br>
-EnvironmentCost: <span id="groupstates_environmentCost"></span> <br>
-WaterLevel: <span id="groupstates_waterLevel"></span><br>
-turbin: <span id="groupstates_turbin"></span>
+  <div id="myPlot-5"></div>
+  <div id="groupstates_waterLevel"></div>
+
+</section>
+
+
+
+
+
+<section class="api">
+
+
+  <div class="max-width">
+    
+  <h2 class="api-title">Turbins</h2>
+  <input type="checkbox" onclick = "auto()">
+    <div class="api-at">
+      
+      <div class="api-left">
+        <div class="api-text"></div>
+        <div id="groupstates_turbin"></div>
+      </div>
+    </div>
+
 
         <script>
           let turbiner = [];
           let watervalue;
-          let strompriser = [];
-          let vannstrom = [];
-          let tidspunkt = [];
+          let start_tid = Date.now();
+          let Auto = false;
 
           const eksempelPlassForStromprisElement = document.getElementById("eksempelPlassForStrompris");
           const vanninnstromning = document.getElementById("vanninnstromning");
@@ -336,44 +321,53 @@ turbin: <span id="groupstates_turbin"></span>
           const waterLevel = document.getElementById("groupstates_waterLevel");
           const test = document.getElementById("groupstates_turbin");
 
+          
           function strompris() {
-
-            fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
+            let strompriser = [];
+            let tidspunkt = [];
+            
+            setInterval( () => {
+              fetch("https://innafjord.azurewebsites.net/api/PowerPrice").then(response => response.json()).then(value => {
                 eksempelPlassForStromprisElement.innerText = value;
                 strompriser.push(value);
-                tidspunkt.push(Date.now());
+                tidspunkt.push(Math.round((Date.now()-start_tid)/1000));
 
-          
-            var data = [{
-              x: tidspunkt,
-              y: strompriser,
-              mode: "lines",
-              type: "scatter"
-            }];
+                
+                var data = [{
+                  x: tidspunkt,
+                  y: strompriser,
+                  mode: "lines",
+                  type: "scatter"
+                }];
 
-            // Define Layout
-            var layout = {
-              xaxis: {title: "tidspunkt"},
-              yaxis: {title: "Strømpris"},
-              title: "Strøm"
-            };
+                // Define Layout
+                var layout = {
+                  xaxis: {title: "Time in seconds"},
+                  yaxis: {title: "Powerprice"},
+                  title: "Power"
+                };
 
-              // Display using Plotly
-              Plotly.newPlot("myPlot", data, layout);
-              
-              });
-             
-            };
-
-          setInterval(strompris,1000)
+                  // Display using Plotly
+                  Plotly.newPlot("myPlot", data, layout);
+                  
+                  });
+            }
+            ,1000)
+               
+          };
+          strompris();
 
 
 
           function water () {
+            let vannstrom = [];
+            let tidspunkt = [];
+
+          setInterval( () => {
             fetch("https://innafjord.azurewebsites.net/api/WaterInflux").then(response => response.json()).then(value => {
                 vanninnstromning.innerText = value;
                 vannstrom.push(value);
-                tidspunkt.push(Date.now());
+                tidspunkt.push(Math.round((Date.now()-start_tid)/1000));
 
             var data = [{
               x: tidspunkt,
@@ -384,22 +378,30 @@ turbin: <span id="groupstates_turbin"></span>
 
             // Define Layout
             var layout = {
-              xaxis: {title: "tidspunkt"},
-              yaxis: {title: "vannstrøm"},
-              title: "Vannstrøm"
+              xaxis: {title: "Time in seconds"},
+              yaxis: {title: "Waterpower"},
+              title: "Water"
             };
 
               // Display using Plotly
               Plotly.newPlot("myPlot-2", data, layout);
 
             });
-
+            }
+              ,1000)
             };
-            setInterval(water,1000)
-       
+
+            water ();
 
 
-            function verdier(){
+
+            function verdier() {
+              let penger = [];
+              let natur = [];
+              let vannivå = [];
+              let tidspunkt = []; 
+
+           setInterval( () => {  
             fetch("https://innafjord.azurewebsites.net/api/GroupState",{
               headers: {
               "GroupId": "Paven AS",
@@ -408,14 +410,92 @@ turbin: <span id="groupstates_turbin"></span>
                 environmentCost.innerText = value.environmentCost;
                 waterLevel.innerText = value.waterLevel;
                 watervalue = value.waterLevel
-              
-              })
+
+              penger.push(value.money);
+              tidspunkt.push(Math.round((Date.now()-start_tid)/1000));
+
+
+            var data = [{
+              x: tidspunkt,
+              y: penger,
+              mode: "lines",
+              type: "scatter"
+            }];
+
+            // Define Layout
+            var layout = {
+              xaxis: {title: "Time in seconds"},
+              yaxis: {title: "Money"},
+              title: "Earnings"
             };
-            setInterval(verdier,1000)
+
+              // Display using Plotly
+              Plotly.newPlot("myPlot-3", data, layout);
 
 
-            
 
+
+              natur.push(value.environmentCost);
+              tidspunkt.push(Math.round((Date.now()-start_tid)/1000));
+
+              var data = [{
+                x: tidspunkt,
+                y: natur,
+                mode: "lines",
+                type: "scatter"
+              }];
+
+              // Define Layout
+              var layout = {
+                xaxis: {title: "Time in seconds"},
+                yaxis: {title: "Nature Cost"},
+                title: "Nature"
+              };
+
+                // Display using Plotly
+                Plotly.newPlot("myPlot-4", data, layout);
+
+
+
+              vannivå.push(value.waterLevel);
+              tidspunkt.push(Math.round((Date.now()-start_tid)/1000));
+
+              var data = [{
+                x: tidspunkt,
+                y: vannivå,
+                mode: "lines",
+                type: "scatter"
+              }];
+
+              // Define Layout
+              var layout = {
+                xaxis: {title: "Time in seconds"},
+                yaxis: {title: "Waterheight"},
+                title: "Water Level"
+              };
+
+              // Display using Plotly
+              Plotly.newPlot("myPlot-5", data, layout)
+
+
+              })
+            }
+            ,1000)
+          };
+
+          verdier ();
+
+
+
+
+          function auto(){
+            if (Auto==false){
+              Auto==true;
+            }else if(Auto==true){
+              Auto==false;
+            }
+          }
+                 
             function FTurbiner(){
             fetch("https://innafjord.azurewebsites.net/api/Turbines",{
               headers: {
@@ -424,33 +504,33 @@ turbin: <span id="groupstates_turbin"></span>
                 
                 test.innerHTML = "";
                 for (let id = 0; id < value.length; id++){
-                  test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" + value[id].capacityUsage;
+                  //test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" + value[id].capacityUsage;
+                  test.innerHTML += "<img src='bilder-video/turbin-av.png' onclick='toggleTurbin(`" +value[id].id + "`)' >";
                   turbiner.push(value[id]);
                 }})
-
-            if (watervalue < 43) {
-              for(let turbin of turbiner){
-                fetch(`https://innafjord.azurewebsites.net/api/Turbines/${turbin.id}?capacityUsage=0`, {
-                method: "PUT",
-                headers: {
-                "GroupId": "Paven AS",
-                "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
+            if (Auto == true){
+              if (watervalue < 25) {
+                for(let turbin of turbiner){
+                  fetch(`https://innafjord.azurewebsites.net/api/Turbines/${turbin.id}?capacityUsage=0`, {
+                  method: "PUT",
+                  headers: {
+                  "GroupId": "Paven AS",
+                  "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
+                }
               }
-
-            }else if (watervalue > 45){
-              for(let turbin of turbiner){
-                fetch(`https://innafjord.azurewebsites.net/api/Turbines/${turbin.id}?capacityUsage=1`, {
-                method: "PUT",
-                headers: {
-                "GroupId": "Paven AS",
-                "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
+              else if (watervalue > 39){
+                for(let turbin of turbiner){
+                  fetch(`https://innafjord.azurewebsites.net/api/Turbines/${turbin.id}?capacityUsage=1`, {
+                  method: "PUT",
+                  headers: {
+                  "GroupId": "Paven AS",
+                  "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
+                }
               }
             }
           };
           setInterval(FTurbiner,1000)
 
-
-    
         </script>
 
 </section>

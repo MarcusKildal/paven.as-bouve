@@ -102,10 +102,6 @@ function toggle() {
   var film = document.querySelector('.video')
   film.classList.toggle('active')
 
-// kjører turbiner ved å trykke på de.
-
-  var vdo = document.querySelector('.vdo')
-  vdo.classList.play('active')
 
 // lager variabel for video og sier at ta det bort, den videoen som er valgt.
 // Deretter stopper videoen, når man klikker på kryss icon.
@@ -119,6 +115,20 @@ function toggle() {
   
 }
 // creating play button script End
+
+
+
+function toggleTurbin () {
+
+// kjører turbiner ved å trykke på de.
+  var vdo = document.querySelector('.vdo')
+  vdo.classList.play('active')
+  
+}
+
+
+
+
 
 
 
