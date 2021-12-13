@@ -31,11 +31,13 @@ if(empty($_SESSION["id"])) {
 
   <!-- linker til favicon bildet -->
   
-    <link rel="icon" type="image/x-icon" href="bilder-video/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="bilder-video/CEO.ico">
 
   <!-- Legger til script kode for menu-bar icon -->
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 
@@ -118,7 +120,7 @@ if(empty($_SESSION["id"])) {
 
     <div class="video">
       <img src="/bilder-video/close.png" class="close" onclick="toggle();">
-      <video src="bilder-video/video/Amazing-Hydropower-Video.mp4" controls></video>
+      <video src="bilder-video/Amazing-Hydropower-Video.mp4" controls></video>
     </div>
 
   </div>
@@ -146,7 +148,7 @@ if(empty($_SESSION["id"])) {
 
   <div class="max-width">
 
-    <h2 class="title">About sus</h2>
+    <h2 class="title">About us</h2>
 
     <div class="at">
 
@@ -259,13 +261,10 @@ if(empty($_SESSION["id"])) {
       </div>
         
     </div>
-
   </div>
 
   <div id="myPlot-4"></div>
-  <div id="groupstates_environmentCost"></div>
-
-  
+  <div id="groupstates_environmentCost"></div>  
 </section>
 
 
@@ -295,20 +294,23 @@ if(empty($_SESSION["id"])) {
 
 
 
-<section class="api">
+<section class="api" id="api">
 
 
-  <div class="max-width">
+<div class="max-width">
     
   <h2 class="api-title">Turbins</h2>
   <input type="checkbox" onclick = "auto()">
+
     <div class="api-at">
-      
-      <div class="api-left">
-        <div class="api-text"></div>
-        <div id="groupstates_turbin"></div>
-      </div>
+     <div class="api-left">
+     <div class="api-text"></div>
     </div>
+  </div>
+
+  <div id="groupstates_turbin"></div>
+  
+
 
 
         <script>
@@ -324,7 +326,8 @@ if(empty($_SESSION["id"])) {
           const waterLevel = document.getElementById("groupstates_waterLevel");
           const test = document.getElementById("groupstates_turbin");
 
-          
+
+
           function strompris() {
             let strompriser = [];
             let tidspunkt = [];
@@ -485,20 +488,30 @@ if(empty($_SESSION["id"])) {
             }
             ,1000)
           };
-
           verdier ();
 
-
-
-
           function auto(){
-            if (Auto==false){
-              Auto==true;
+            if(Auto==false){
+              Auto=true;
             }else if(Auto==true){
-              Auto==false;
-            }
+              Auto=false;
+            } 
           }
-                 
+          
+          function toggleTurbin () {
+          if(turbin.classList=='newClass'){
+            turbin.classList.add('newClass')
+          }
+          else {
+            turbin.classList.remove('newClass');
+          }
+        }
+
+        
+
+      
+
+          
             function FTurbiner(){
             fetch("https://innafjord.azurewebsites.net/api/Turbines",{
               headers: {
@@ -508,19 +521,20 @@ if(empty($_SESSION["id"])) {
                 test.innerHTML = "";
                 for (let id = 0; id < value.length; id++){
                   //test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" + value[id].capacityUsage;
-                  test.innerHTML += "<img src='bilder-video/turbin-av.png' onclick='toggleTurbin(`" +value[id].id + "`)' >";
+                  test.innerHTML += "<img src='bilder-video/turbin-av-2.png' onclick='toggleTurbin(`" +value[id].id + "`)' class='newClass'>";
                   turbiner.push(value[id]);
                 }})
-            if (Auto == true){
-              if (watervalue < 25) {
-                for(let turbin of turbiner){
-                  fetch(`https://innafjord.azurewebsites.net/api/Turbines/${turbin.id}?capacityUsage=0`, {
-                  method: "PUT",
-                  headers: {
-                  "GroupId": "Paven AS",
-                  "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
+              if (Auto == true){
+                if (watervalue < 25) {
+                  for(let turbin of turbiner){
+                    fetch(`https://innafjord.azurewebsites.net/api/Turbines/${turbin.id}?capacityUsage=0`, {
+                    method: "PUT",
+                    headers: {
+                    "GroupId": "Paven AS",
+                    "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
+                  }
                 }
-              }
+              } 
               else if (watervalue > 39){
                 for(let turbin of turbiner){
                   fetch(`https://innafjord.azurewebsites.net/api/Turbines/${turbin.id}?capacityUsage=1`, {
@@ -530,8 +544,8 @@ if(empty($_SESSION["id"])) {
                   "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
                 }
               }
-            }
-          };
+              
+            };
           setInterval(FTurbiner,1000)
 
         </script>

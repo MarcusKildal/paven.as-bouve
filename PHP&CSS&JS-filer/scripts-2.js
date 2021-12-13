@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   // lager funksjon som gjør at, når blar ned så kommer det blå bakgrunn på menu bar.
-    $(window).scroll(function(){
+    $(window).scroll(                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             function(){
 
      // sticky menu-bar on scroll script Start
      
@@ -118,18 +118,6 @@ function toggle() {
 
 
 
-function toggleTurbin () {
-
-// kjører turbiner ved å trykke på de.
-  var vdo = document.querySelector('.vdo')
-  vdo.classList.play('active')
-  
-}
-
-
-
-
-
 
 
 
@@ -143,3 +131,5 @@ $('.ts').owlCarousel({
   autoplayHoverPause: true,
   
 });
+
+  
