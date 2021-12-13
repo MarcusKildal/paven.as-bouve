@@ -186,8 +186,8 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">Powerprice</div>
-        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website. Powerprice: </p>
+        <div class="api-text">Power price</div>
+        <p>This is the price of the power right now.</p>
       </div>
     </div>
   </div>
@@ -207,8 +207,8 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">Waterpower</div>
-        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website. Waterpower: </p>
+        <div class="api-text">Water power</div>
+        <p>This is the price of the water power right now.</p>
       </div>
         
     </div>
@@ -233,7 +233,7 @@ if(empty($_SESSION["id"])) {
 
       <div class="api-left">
         <div class="api-text">Earnings</div>
-        <p>Welcome to our website. On our website you can get alot of information and status for hydropower. Money: </p>
+        <p>This is how much money we have earned the power.</p>
       </div>
         
     </div>
@@ -257,7 +257,7 @@ if(empty($_SESSION["id"])) {
 
       <div class="api-left">
         <div class="api-text">Nature cost</div>
-        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website. Nature Cost: </p>
+        <p>This is how much it has cost the nature.</p>
       </div>
         
     </div>
@@ -278,8 +278,8 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">Waterheight</div>
-        <p>Welcomes to our website and in our website you can get lots of information and status for hydropower. Navigate around the website and enjoy our website. Water Level: </p>
+        <div class="api-text">Water level</div>
+        <p>This is the water level right now.</p>
       </div>
         
     </div>
