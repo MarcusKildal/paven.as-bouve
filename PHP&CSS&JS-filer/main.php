@@ -517,7 +517,6 @@ if(empty($_SESSION["id"])) {
               headers: {
               "GroupId": "Paven AS",
               "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}}).then(response => response.json()).then(value => {
-                
                 test.innerHTML = "";
                 for (let id = 0; id < value.length; id++){
                   //test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" + value[id].capacityUsage;
@@ -544,7 +543,6 @@ if(empty($_SESSION["id"])) {
                   "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
                 }
               }
-              
             };
           setInterval(FTurbiner,1000)
 
