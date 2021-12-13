@@ -279,7 +279,7 @@ if(empty($_SESSION["id"])) {
 
       <div class="api-left">
         <div class="api-text">Water level</div>
-        <p>This is the water level right now.</p>
+        <p>The water level at a certain place is the sum of the astronomical tide and the weather’s effect on the water level. Globally, semi-diurnal tides are most common, meaning two high and low tides each day.</p>
       </div>
         
     </div>
