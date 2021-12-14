@@ -207,12 +207,8 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-
         <div class="api-text">Water influx</div>
         <p>This is the Water influx of cubic meters per secound. The water influx is around:</p>
-
-        <div class="api-text">Water power</div>
-        <p>Water power, is a renewable source of energy that generates power by using a dam or diversion structure to alter the natural flow of a river or other body of water. Waterpower relies on the endless, constantly recharging system of the water cycle to produce electricity, using a fuel—water—that is not reduced or eliminated in the process.</p>
       </div>
         
     </div>
@@ -236,13 +232,8 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-<<<<<<< HEAD
         <div class="api-text">Money</div>
         <p>This is how much money we have earned in kroners:</p>
-=======
-        <div class="api-text">Earnings</div>
-        <p>This is how much money we have earned from the power we have sold.</p>
->>>>>>> d729eef8540e94f7890d8096097050c6cb09f852
       </div>
         
     </div>
@@ -265,13 +256,8 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-<<<<<<< HEAD
         <div class="api-text">EnvironmentCost</div>
         <p>This is how much it has cost the environment in kroners:</p>
-=======
-        <div class="api-text">Nature cost</div>
-        <p>This is how much we have to pay because of the effect on the environment.</p>
->>>>>>> d729eef8540e94f7890d8096097050c6cb09f852
       </div>
         
     </div>
@@ -293,11 +279,7 @@ if(empty($_SESSION["id"])) {
 
       <div class="api-left">
         <div class="api-text">Water level</div>
-<<<<<<< HEAD
         <p>This is the water level right now in meters:</p>
-=======
-        <p>The water level at a certain place is the sum of the astronomical tide and the weather’s effect on the water level. Globally, semi-diurnal tides are most common, meaning two high and low tides each day.</p>
->>>>>>> d729eef8540e94f7890d8096097050c6cb09f852
       </div>
         
     </div>
@@ -535,7 +517,6 @@ if(empty($_SESSION["id"])) {
               headers: {
               "GroupId": "Paven AS",
               "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}}).then(response => response.json()).then(value => {
-                
                 test.innerHTML = "";
                 for (let id = 0; id < value.length; id++){
                   //test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" + value[id].capacityUsage;
@@ -562,11 +543,7 @@ if(empty($_SESSION["id"])) {
                   "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}});
                 }
               }
-<<<<<<< HEAD
               
-=======
-
->>>>>>> d729eef8540e94f7890d8096097050c6cb09f852
             };
           setInterval(FTurbiner,1000)
           
