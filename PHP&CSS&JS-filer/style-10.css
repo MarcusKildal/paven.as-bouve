@@ -768,15 +768,15 @@ section .api-title::after {
 
 #groupstates_environmentCost {
   position: relative;
-  margin-left: 260px;
-  bottom: 420px;
+  margin-left: 550px;
+  bottom: 470px;
   font-weight: 900;
 }
 
 #groupstates_waterLevel {
   position: relative;
-  margin-left: 260px;
-  bottom: 420px;
+  margin-left: 430px;
+  bottom: 470px;
   font-weight: 900;
 }
 

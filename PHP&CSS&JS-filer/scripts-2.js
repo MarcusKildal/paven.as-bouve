@@ -117,8 +117,15 @@ function toggle() {
 // creating play button script End
 
 
+    function toggleTurbin() {
+        var img = document.getElementById('groupstates_turbin');
+        img.style.transform = 'rotate(180deg)';
+    }
 
-
+    document.querySelector(".rotate").addEventListener('click', function() {
+      current_rotation += 90;
+      document.querySelector(".rotate").style.transform = 'rotate(' + current_rotation + 'deg)';
+   });
 
 
 // lager til slide animasjon for teams boksen.

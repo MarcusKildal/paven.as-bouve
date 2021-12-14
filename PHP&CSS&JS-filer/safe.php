@@ -187,7 +187,7 @@ if(empty($_SESSION["id"])) {
 
       <div class="api-left">
         <div class="api-text">Power price</div>
-        <p>This is the price of the power right now in kroners per MWh:</p>
+        <p>This is the price of the power right now.</p>
       </div>
     </div>
   </div>
@@ -207,8 +207,8 @@ if(empty($_SESSION["id"])) {
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">Water influx</div>
-        <p>This is the Water influx of cubic meters per secound. The water influx is around:</p>
+        <div class="api-text">Water power</div>
+        <p>This is the price of the water power right now.</p>
       </div>
         
     </div>
@@ -227,13 +227,13 @@ if(empty($_SESSION["id"])) {
 
   <div class="max-width">
 
-    <h2 class="api-title">Moeny</h2>
+    <h2 class="api-title">Earnings</h2>
 
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">Money</div>
-        <p>This is how much money we have earned in kroners:</p>
+        <div class="api-text">Earnings</div>
+        <p>This is how much money we have earned the power.</p>
       </div>
         
     </div>
@@ -251,20 +251,20 @@ if(empty($_SESSION["id"])) {
 
   <div class="max-width">
 
-    <h2 class="api-title">EnvironmentCost</h2>
+    <h2 class="api-title">Nature Cost</h2>
 
     <div class="api-at">
 
       <div class="api-left">
-        <div class="api-text">EnvironmentCost</div>
-        <p>This is how much it has cost the environment in kroners:</p>
+        <div class="api-text">Nature cost</div>
+        <p>This is how much it has cost the nature.</p>
       </div>
         
     </div>
   </div>
 
   <div id="myPlot-4"></div>
-  <div id="groupstates_environmentCost"></div>
+  <div id="groupstates_environmentCost"></div>  
 </section>
 
 
@@ -279,7 +279,7 @@ if(empty($_SESSION["id"])) {
 
       <div class="api-left">
         <div class="api-text">Water level</div>
-        <p>This is the water level right now in meters:</p>
+        <p>This is the water level right now.</p>
       </div>
         
     </div>
@@ -312,8 +312,8 @@ if(empty($_SESSION["id"])) {
   
 
 
-        <script>
 
+        <script>
           let turbiner = [];
           let watervalue;
           let start_tid = Date.now();
@@ -520,7 +520,7 @@ if(empty($_SESSION["id"])) {
                 test.innerHTML = "";
                 for (let id = 0; id < value.length; id++){
                   //test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" + value[id].capacityUsage;
-                  test.innerHTML += "<img src='bilder-video/turbin-av-2.png' onclick='toggleTurbin(`" +value[id].id + "`)' >";
+                  test.innerHTML += "<img src='bilder-video/turbin-av-2.png' onclick='toggleTurbin(`" +value[id].id + "`)' class='newClass'>";
                   turbiner.push(value[id]);
                 }})
               if (Auto == true){
