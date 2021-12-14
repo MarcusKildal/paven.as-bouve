@@ -20,6 +20,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    scroll-behavior: smooth;
   }
 
 
@@ -126,6 +127,7 @@
 
 .menu-bar .menu li {
   display: inline-block;
+
 }
 
 
@@ -152,7 +154,7 @@
 /* når menu bar har bakgunnsfarge blå. får menu bar tittel farge hvit, når man tar pilen over den. */
 
 .menu-bar.sticky .menu li a:hover {
-  color: white;
+  color: orangered;
 }
 
 /* menu-bar styling End */
@@ -746,23 +748,23 @@ section .api-title::after {
 
  #eksempelPlassForStrompris {
    position: relative;
-   margin-left: 250px;
-   bottom: 420px;
+   margin-left: 565px;
+   bottom: 470px;
    font-weight: 900;
    
  }
 
  #vanninnstromning {
   position: relative;
-  margin-left: 260px;
-  bottom: 420px;
+  margin-left: 160px;
+  bottom: 445px;
   font-weight: 900;
  }
 
  #groupstates_money {
   position: relative;
-  margin-left: 330px;
-  bottom: 445px;
+  margin-left: 510px;
+  bottom: 470px;
   font-weight: 900;
  }
 
@@ -780,35 +782,41 @@ section .api-title::after {
   font-weight: 900;
 }
 
+#turbinpannel > div{
+  overflow: hidden;
+  border: 2px solid black;
+  width: 233px;
+  height: 233px;
 
-#groupstates_turbin {
-  position: relative;
   display: flex;
-  height: 70px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0.1s linear;
 }
 
 
-.newClass{
-  -webkit-animation: spin 1s linear infinite;
-  -moz-animation: spin 1s linear infinite;
-  animation: spin 1s linear infinite;
+#turbinpannel > div > img{
+  max-width: 90%;
+  max-height: 90%;
+  transform: rotate(0deg);
 }
 
-
-
-
-/*use keyframes*/
-/*@-webkit-keyframes spin{
-  100%{-webkit-transform: rotate(360deg);}
-}
-@-moz-keyframes spin{
-  100%{-webkit-transform: rotate(360deg);}
-}
-@keyframes spin{
-  100%{-webkit-transform: rotate(360deg);}
+#turbinpannel > div:hover{
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  
 }
 
+#turbinpannel > div:active{
+  background-color: rgba(255, 255, 255, 0.5);
+}
 
+#turbinpannel > div > img{
+  max-width: 90%;
+  max-height: 90%;
+  transform: rotate(0deg);
+}
 
 
 /* teams section styling Start */

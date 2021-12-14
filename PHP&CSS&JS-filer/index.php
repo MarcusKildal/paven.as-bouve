@@ -106,8 +106,7 @@
               include ("server.php"); 
              ?>
           </div>
-          
-          <div class="msg-2"></div>
+
 
         </div>
       

@@ -117,16 +117,6 @@ function toggle() {
 // creating play button script End
 
 
-    function toggleTurbin() {
-        var img = document.getElementById('groupstates_turbin');
-        img.style.transform = 'rotate(180deg)';
-    }
-
-    document.querySelector(".rotate").addEventListener('click', function() {
-      current_rotation += 90;
-      document.querySelector(".rotate").style.transform = 'rotate(' + current_rotation + 'deg)';
-   });
-
 
 // lager til slide animasjon for teams boksen.
 
@@ -139,4 +129,45 @@ $('.ts').owlCarousel({
   
 });
 
-  
+function changeTurbineState(e){
+  const target = Array.from(turbiner).indexOf(e.target);
+  const target_src = turbiner[target].src;
+  if (target_src.indexOf("turbin_av") > -1){
+      changeTurbineUsage(target, 1);
+  } else {
+      changeTurbineUsage(target, 0);
+  }
+}
+
+
+const turbiner = document.querySelectorAll("#turbinpannel > div > img");
+for (let i = 0; i < turbiner.length; i++){
+    turbiner[i].addEventListener("click", changeTurbineState);
+}
+
+
+
+let rotation = 0;
+let turbineState = new Array(20).fill({'capacityUsage': 0}); // so i dont get undefined, when not having the values
+
+setInterval(() => {
+    turbines().then(value => {
+        turbineState = value.slice();
+        for (let i = 0; i < turbiner.length; i++){
+            if (turbineState[i].capacityUsage){
+                turbiner[i].src = "bilder-video/turbin-av.png";
+            } else {
+                turbiner[i].src = "bilder-video/turbin-av-2.png";
+            }
+        }
+    });
+}, 1000);
+
+setInterval(() => {
+  for (let i = 0; i < turbiner.length; i++){
+      if (turbineState[i].capacityUsage){
+          turbiner[i].style.transform = "rotate(" + (rotation + 1) + "deg)";
+      }
+  }
+  rotation++;
+}, 10);

@@ -75,7 +75,17 @@ if(empty($_SESSION["id"])) {
         og deretter gjør jeg den til en knapp.
         Etter det lager jeg drop-menu for dette og lager logg ut knapp. -->
 
+  <ul class="menu">
+    <li><a href="#api-1">Power price</a></li>
+    <li><a href="#api-2">Water influx</a></li>
+    <li><a href="#api-3">Money</a></li>
+    <li><a href="#api-4">EnvironmentCost</a></li>
+    <li><a href="#api-5">Water level</a></li>
+    <li><a href="#api-6">Turbins</a></li>
+  </ul>
+
   <div class="right-menu">
+
     <button class="menu-button">Your Profile</button>
 
     <div class="dropdown-menu">
@@ -177,7 +187,7 @@ if(empty($_SESSION["id"])) {
 <!-- about section End -->
 
 
-<section class="api" id="api">
+<section class="api" id="api-1">
 
   <div class="max-width">
 
@@ -198,7 +208,7 @@ if(empty($_SESSION["id"])) {
 
 
 
-<section class="api" id="api">
+<section class="api" id="api-2">
 
   <div class="max-width">
 
@@ -223,7 +233,7 @@ if(empty($_SESSION["id"])) {
 
 
 
-<section class="api" id="api">
+<section class="api" id="api-3">
 
   <div class="max-width">
 
@@ -247,7 +257,7 @@ if(empty($_SESSION["id"])) {
 
 
 
-<section class="api" id="api">
+<section class="api" id="api-4">
 
   <div class="max-width">
 
@@ -269,7 +279,7 @@ if(empty($_SESSION["id"])) {
 
 
 
-<section class="api" id="api">
+<section class="api" id="api-5">
 
   <div class="max-width">
 
@@ -294,7 +304,7 @@ if(empty($_SESSION["id"])) {
 
 
 
-<section class="api" id="api">
+<section class="api" id="api-6">
 
 
 <div class="max-width">
@@ -306,9 +316,28 @@ if(empty($_SESSION["id"])) {
      <div class="api-left">
      <div class="api-text"></div>
     </div>
+
+    <div id="turbinpannel">
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+          <div><img src="bilder-video/turbin-av.png"></div>
+       </div>
   </div>
 
-  <div id="groupstates_turbin"></div>
+
+
+  <!--<div id="groupstates_turbin"></div>-->
   
 
 
@@ -519,8 +548,8 @@ if(empty($_SESSION["id"])) {
               "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}}).then(response => response.json()).then(value => {
                 test.innerHTML = "";
                 for (let id = 0; id < value.length; id++){
-                  //test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" + value[id].capacityUsage;
-                  test.innerHTML += "<img src='bilder-video/turbin-av-2.png' onclick='toggleTurbin(`" +value[id].id + "`)' >";
+                  test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" + value[id].capacityUsage;
+                  //test.innerHTML += "<img src='bilder-video/turbin-av-2.png' onclick='toggleTurbin(`" +value[id].id + "`)' >";
                   turbiner.push(value[id]);
                 }})
               if (Auto == true){
@@ -547,8 +576,52 @@ if(empty($_SESSION["id"])) {
             };
           setInterval(FTurbiner,1000)
           
+          
+  function changeTurbineState(e){
+      const target = Array.from(turbiner).indexOf(e.target);
+      const target_src = turbiner[target].src;
+      if (target_src.indexOf("turbin_av") > -1){
+          changeTurbineUsage(target, 1);
+      } else {
+          changeTurbineUsage(target, 0);
+      }
+}
 
-        </script>
+
+
+const turbiner = document.querySelectorAll("#turbinpannel > div > img");
+for (let i = 0; i < turbiner.length; i++){
+    turbiner[i].addEventListener("click", changeTurbineState);
+}
+
+
+
+let rotation = 0;
+let turbineState = new Array(20).fill({'capacityUsage': 0}); // so i dont get undefined, when not having the values
+
+setInterval(() => {
+          turbines().then(value => {
+              turbineState = value.slice();
+              for (let i = 0; i < turbiner.length; i++){
+                  if (turbineState[i].capacityUsage){
+                      turbiner[i].src = "bilder-video/turbin-av.png";
+                  } else {
+                      turbiner[i].src = "bilder-video/turbin-av-2.png";
+                  }
+              }
+          });
+      }, 1000);
+
+      setInterval(() => {
+        for (let i = 0; i < turbiner.length; i++){
+            if (turbineState[i].capacityUsage){
+                turbiner[i].style.transform = "rotate(" + (rotation + 1) + "deg)";
+            }
+        }
+        rotation++;
+      }, 10);
+
+      </script>
 
 </section>
 
