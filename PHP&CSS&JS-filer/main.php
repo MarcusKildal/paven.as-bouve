@@ -208,7 +208,7 @@ if(empty($_SESSION["id"])) {
 
       <div class="api-left">
         <div class="api-text">Water power</div>
-        <p>This is the price of the water power right now.</p>
+        <p>Water power, is a renewable source of energy that generates power by using a dam or diversion structure to alter the natural flow of a river or other body of water. Waterpower relies on the endless, constantly recharging system of the water cycle to produce electricity, using a fuel—water—that is not reduced or eliminated in the process.</p>
       </div>
         
     </div>
@@ -233,7 +233,7 @@ if(empty($_SESSION["id"])) {
 
       <div class="api-left">
         <div class="api-text">Earnings</div>
-        <p>This is how much money we have earned the power.</p>
+        <p>This is how much money we have earned from the power we have sold.</p>
       </div>
         
     </div>
@@ -257,7 +257,7 @@ if(empty($_SESSION["id"])) {
 
       <div class="api-left">
         <div class="api-text">Nature cost</div>
-        <p>This is how much it has cost the nature.</p>
+        <p>This is how much we have to pay because of the effect on the environment.</p>
       </div>
         
     </div>
@@ -279,7 +279,7 @@ if(empty($_SESSION["id"])) {
 
       <div class="api-left">
         <div class="api-text">Water level</div>
-        <p>This is the water level right now.</p>
+        <p>The water level at a certain place is the sum of the astronomical tide and the weather’s effect on the water level. Globally, semi-diurnal tides are most common, meaning two high and low tides each day.</p>
       </div>
         
     </div>
