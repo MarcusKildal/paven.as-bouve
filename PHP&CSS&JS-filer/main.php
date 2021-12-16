@@ -50,9 +50,7 @@ if(empty($_SESSION["id"])) {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-
  </head>
-
 
 
 <body>
@@ -302,8 +300,6 @@ if(empty($_SESSION["id"])) {
 </section>
 
 
-
-
 <section class="api" id="api-6">
 
 
@@ -314,35 +310,13 @@ if(empty($_SESSION["id"])) {
 
     <div class="api-at">
      <div class="api-left">
-     <div class="api-text"></div>
-    </div>
+     <div class="api-text">
+     </div>
 
-    <div id="turbinpannel">
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-          <div><img src="bilder-video/turbin-av.png"></div>
-       </div>
-  </div>
-
-
-
-  <!--<div id="groupstates_turbin"></div>-->
+     <div id="groupstates_turbin"></div>
   
 
-
         <script>
-
           let turbiner = [];
           let watervalue;
           let start_tid = Date.now();
@@ -527,29 +501,20 @@ if(empty($_SESSION["id"])) {
             } 
           }
           
-          function toggleTurbin () {
-          if(turbin.classList=='newClass'){
-            turbin.classList.add('newClass')
-          }
-          else {
-            turbin.classList.remove('newClass');
-          }
-        }
-
-        
-
-      
+     
+          
 
           
-            function FTurbiner(){
+            
+          function FTurbiner(){
             fetch("https://innafjord.azurewebsites.net/api/Turbines",{
               headers: {
               "GroupId": "Paven AS",
               "GroupKey": "LlbAb6n6pUqbJUSZ2nbNSA=="}}).then(response => response.json()).then(value => {
                 test.innerHTML = "";
                 for (let id = 0; id < value.length; id++){
-                  test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" + value[id].capacityUsage;
-                  //test.innerHTML += "<img src='bilder-video/turbin-av-2.png' onclick='toggleTurbin(`" +value[id].id + "`)' >";
+                  //test.innerHTML += "<br> " + value[id].id + "&nbsp;&nbsp;&nbsp;&nbsp;" + value[id].capacityUsage;
+                 // test.innerHTML += "<img src='bilder-video/turbin-av-2.png' onclick='toggleTurbin(`" +value[id].id + "`)' >";
                   turbiner.push(value[id]);
                 }})
               if (Auto == true){
@@ -575,55 +540,277 @@ if(empty($_SESSION["id"])) {
               
             };
           setInterval(FTurbiner,1000)
-          
-          
-  function changeTurbineState(e){
-      const target = Array.from(turbiner).indexOf(e.target);
-      const target_src = turbiner[target].src;
-      if (target_src.indexOf("turbin_av") > -1){
-          changeTurbineUsage(target, 1);
-      } else {
-          changeTurbineUsage(target, 0);
-      }
-}
+        </script>
 
 
+      <img src="bilder-video/turbin-av-2.png" class="turbin1" id="c72a2744-23ee-4fa2-b928-253392ce8b43">
+      <img src="bilder-video/turbin-av-2.png" class="turbin2" id="b92b7e61-606e-4837-a645-87a800d9b15e">
+      <img src="bilder-video/turbin-av-2.png" class="turbin3" id="8433545c-14a1-4d86-a608-d906e439ffab">
+      <img src="bilder-video/turbin-av-2.png" class="turbin4" id="af4df074-6150-40bb-acc6-7bcfc2b0992a">
+      <img src="bilder-video/turbin-av-2.png" class="turbin5" id="6d173265-58f0-4f32-93f0-36880e883aa8">
+      <img src="bilder-video/turbin-av-2.png" class="turbin6" id="051f1dd1-f915-46bb-a6de-526baf9ee343">
+      <img src="bilder-video/turbin-av-2.png" class="turbin7" id= "14fbcf5b-4488-48d2-adae-e87954d95bdb">
+      <img src="bilder-video/turbin-av-2.png" class="turbin8" id= "3de299dc-8d8a-4a5f-895d-15ab49759e8e">
+      <img src="bilder-video/turbin-av-2.png" class="turbin9" id= "fec78d0c-fdee-4540-a886-bbf5ecf06a28">
+      <img src="bilder-video/turbin-av-2.png" class="turbin10" id= "7e40684b-aa67-4fac-a470-fbd8fd8ea29a">
+      <img src="bilder-video/turbin-av-2.png" class="turbin11" id=  "36b09d23-ee43-4f1d-b407-a8f4bf7c832d">
+      <img src="bilder-video/turbin-av-2.png" class="turbin12" id= "bb16c83b-64e6-40de-a6e4-e67a314a7c94">
+      <img src="bilder-video/turbin-av-2.png" class="turbin13" id="4330f436-0477-479b-82c8-b3d9f41344d9">
+      <img src="bilder-video/turbin-av-2.png" class="turbin14" id="b12640fd-af78-4b5a-82ff-a8e08a5916da">
 
-const turbiner = document.querySelectorAll("#turbinpannel > div > img");
-for (let i = 0; i < turbiner.length; i++){
-    turbiner[i].addEventListener("click", changeTurbineState);
-}
+    
+  <h1><p>Adjust the speed:</p><input type="range" min=0.1 max=100 id="hastighet"></input></h1>
+  </div>
 
 
+<!-- Script Start-->
 
-let rotation = 0;
-let turbineState = new Array(20).fill({'capacityUsage': 0}); // so i dont get undefined, when not having the values
+  <!-- Script koder for turbinene roteringen-->
+  <script>
+    img1 = document.querySelector(".turbin1");
+		img2 = document.querySelector(".turbin2"); // definerer bilde elementet
+    img3 = document.querySelector(".turbin3"); // definerer bilde elementet
+		img4 = document.querySelector(".turbin4"); // definerer bilde elementet
+		img5 = document.querySelector(".turbin5"); // definerer bilde elementet
+		img6 = document.querySelector(".turbin6"); // definerer bilde elementet
+		img7 = document.querySelector(".turbin7"); // definerer bilde elementet
+		img8 = document.querySelector(".turbin8"); // definerer bilde elementet
+		img9 = document.querySelector(".turbin9"); // definerer bilde elementet
+		img10 = document.querySelector(".turbin10"); // definerer bilde elementet
+		img11 = document.querySelector(".turbin11"); // definerer bilde elementet
+		img12 = document.querySelector(".turbin12"); // definerer bilde elementet
+		img13 = document.querySelector(".turbin13"); // definerer bilde elementet
+		img14 = document.querySelector(".turbin14"); // definerer bilde elementet
+		hastighet = document.querySelector("#hastighet"); // definerer speed slider elementet
+    
+		img1.deg = 0;
+		img2.deg = 0;
+    img3.deg = 0;
+    img4.deg = 0;
+    img5.deg = 0;
+    img6.deg = 0;
+    img7.deg = 0;
+    img8.deg = 0;
+    img9.deg = 0;
+    img10.deg = 0;
+    img11.deg = 0;
+    img12.deg = 0;
+    img13.deg = 0;
+    img14.deg = 0;
+		speed = 1;
+    
+    hastighet.addEventListener("change",function() { // Setter farten til den som er på slideren
+        speed = hastighet.value;
+    });
+    hastighet.addEventListener("change",function() { // Setter farten til den som er på slideren
+			speed = hastighet.value;
+		});
 
-setInterval(() => {
-          turbines().then(value => {
-              turbineState = value.slice();
-              for (let i = 0; i < turbiner.length; i++){
-                  if (turbineState[i].capacityUsage){
-                      turbiner[i].src = "bilder-video/turbin-av.png";
-                  } else {
-                      turbiner[i].src = "bilder-video/turbin-av-2.png";
-                  }
-              }
-          });
-      }, 1000);
+		img1.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+				this.src = "bilder-video/turbin-på-2.png";					// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img1.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img1.style.transform = "rotate("+img1.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						                               // om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";			// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
 
-      setInterval(() => {
-        for (let i = 0; i < turbiner.length; i++){
-            if (turbineState[i].capacityUsage){
-                turbiner[i].style.transform = "rotate(" + (rotation + 1) + "deg)";
-            }
-        }
-        rotation++;
-      }, 10);
+    img2.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img2.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img2.style.transform = "rotate("+img2.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
 
-      </script>
+    img3.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img3.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img3.style.transform = "rotate("+img3.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
 
+    img4.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img4.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img4.style.transform = "rotate("+img4.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
+
+    img5.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img5.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img5.style.transform = "rotate("+img5.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
+
+    img6.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img6.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img6.style.transform = "rotate("+img6.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
+
+    img7.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img7.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img7.style.transform = "rotate("+img7.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
+
+    img8.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img8.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img8.style.transform = "rotate("+img8.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
+
+    img9.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img9.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img9.style.transform = "rotate("+img9.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
+
+    img10.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img10.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img10.style.transform = "rotate("+img10.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
+
+    img11.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img11.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img11.style.transform = "rotate("+img11.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
+
+    img12.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img12.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img12.style.transform = "rotate("+img12.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
+
+    img13.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img13.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img13.style.transform = "rotate("+img13.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
+
+    img14.addEventListener("click", function() { 	// det som skjer når du trykker på bilde
+			if (this.turtel == undefined) { 			// sjekker om den er av eller på
+        this.src = "bilder-video/turbin-på-2.png";							// bytter til bilde som skal være mens viften er på
+				this.turtel = setInterval(function(){	// interval som roterer bilde hver 10 ms
+					img14.deg += parseInt(speed);				// Setter en ny verdi for hvor mange grader den er rotert
+					img14.style.transform = "rotate("+img14.deg+"deg)";	// Setter rotasjonen på bildet
+				},10);
+			} else {						// om viften er på skal...
+				this.src = "bilder-video/turbin-av-2.png";	// Setter viften til den med rød prikk i midten
+				clearInterval(this.turtel);	// Fjerner den intervalen som roterer bilde
+				this.turtel = undefined;		// Gjør statusen sånn at if greia vet om den er AV.
+			}
+		})
+</script>
+
+<!-- Script End-->
+
+
+    </div>  
 </section>
+
+
+
 
   <!-- teams section Start -->
 
@@ -707,6 +894,7 @@ setInterval(() => {
 
 </section>
 
+
 <!-- teams section End -->
 
 
@@ -730,6 +918,7 @@ setInterval(() => {
 <!-- linker til javascript -->
 
   <script src="scripts-2.js"></script>
+  <script src="turbin_animasjon.js"></script>
 
  </body>
 

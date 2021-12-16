@@ -782,46 +782,185 @@ section .api-title::after {
   font-weight: 900;
 }
 
-#turbinpannel > div{
-  overflow: hidden;
-  border: 2px solid black;
-  width: 233px;
-  height: 233px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0);
-  transition: background-color 0.1s linear;
-}
 
 
-#turbinpannel > div > img{
-  max-width: 90%;
-  max-height: 90%;
-  transform: rotate(0deg);
-}
 
-#turbinpannel > div:hover{
-  background-color: rgba(255, 255, 255, 0.2);
+/* Turbin Styling Start */
+
+
+/* gir posisjon til alle turbinene, størrelse, setter rotate verdien 
+   og sier at pilen skal reagere når man har pilen over turbinene. */
+
+   
+.turbin1{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
   cursor: pointer;
-  
-}
-
-#turbinpannel > div:active{
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-#turbinpannel > div > img{
-  max-width: 90%;
-  max-height: 90%;
   transform: rotate(0deg);
 }
+
+.turbin2{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.turbin3{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.turbin4{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.turbin5{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.turbin6{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.turbin7{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.turbin8{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.turbin9{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.turbin10{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.turbin11{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.turbin12{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.turbin13{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+
+.turbin14{
+  position: relative;
+  display: inline-flex;
+  left: 300px;
+  top: 50px;
+  height: 70px;
+  cursor: pointer;
+  transform: rotate(0deg);
+}
+/* Turbin Styling End */
+
+
+h1 p {
+  position: relative;
+  left: 530px;
+  bottom: 210px;
+  font-weight: 400;
+}
+
+#groupstates_turbin{
+  position: relative;
+  display: inline-flex;
+  left: -30px;
+  top: 50px;
+  height: 70px;
+
+}
+#hastighet {
+  position: relative;
+  bottom: 190px;
+  left: 570px;
+}
+
+
+
+
 
 
 /* teams section styling Start */
-
-
 
 .teams {
   background: url(bilder-video/personer/team-background.jpeg);
@@ -947,7 +1086,6 @@ p {
   width: 90%;
   color: white;
 }
-
 
 /* teams section styling End */
 
